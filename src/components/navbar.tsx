@@ -2,14 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { CgClose, CgMenuLeft } from "react-icons/cg";
 import { FaChevronDown } from "react-icons/fa6";
 
 export const Navbar = () => {
-  const [dropdownState, setDropDownState] = useState<"open" | "close">("close");
   return (
-    <nav className="flex justify-between items-center gap-10">
+    <nav className="fixed z-10 inset-x-0 flex justify-between items-center gap-10 px-10 max-[541px]:px-5 text-background-primary">
       <Link
         href="/"
         className="relative w-20 h-10 max-[460px]:w-16 max-[460px]:h-8"
@@ -18,49 +16,55 @@ export const Navbar = () => {
       </Link>
       <ul className="flex gap-10 uppercase text-[0.70rem] font-semibold items-center max-[955px]:hidden">
         <li>
-          <div
-            className="group relative"
-            onMouseOver={() => setDropDownState("open")}
-          >
+          <div className="group relative">
             <div className="flex items-center gap-x-1 relative cursor-pointer">
               <p>companies</p>
-              <FaChevronDown className="text-[0.60rem] group-hover:-rotate-180 transition-transform" />
+              <FaChevronDown className="text-[0.60rem]" />
             </div>
 
             <div className="absolute left-0 top-10 w-max opacity-0 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:top-full group-hover:pointer-events-auto pt-3">
-              <div className="bg-background-primary shadow rounded-md p-5 relative">
-                <ul className="uppercase text-[0.70rem] font-semibold grid grid-cols-3 gap-x-15 gap-y-5">
-                  <li className="py-2 will-change-transform">
-                    <Link href={"/"}>motors</Link>
+              <div className="bg-background-primary text-black shadow rounded-md relative">
+                <ul className="uppercase text-[0.70rem] font-semibold gap-y-2 flex flex-col p-5">
+                  <li className="will-change-transform">
+                    <Link className="py-2 block size-full" href={"/"}>
+                      {/* TODO: add after element with bg of background-primary to each nav link that grows horizontally on hover */}
+                      motors
+                    </Link>
                   </li>
-                  <li className="py-2 will-change-transform">
-                    <Link href={"/"}>technologies</Link>
+                  <li className="will-change-transform">
+                    <Link className="py-2 block size-full" href={"/"}>
+                      technologies
+                    </Link>
                   </li>
-                  <li className="py-2 will-change-transform">
-                    <Link href={"/"}>mobility</Link>
+                  <li className="will-change-transform">
+                    <Link className="py-2 block size-full" href={"/"}>
+                      mobility
+                    </Link>
                   </li>
-                  <div className="absolute right-1/3 w-px top-0 h-full opacity-10 py-5">
-                    <div className="bg-black size-full" />
-                  </div>
-                  <li className="py-2 will-change-transform">
-                    <Link href={"/"}>motor assembly</Link>
+                  <li className="will-change-transform">
+                    <Link className="py-2 block size-full" href={"/"}>
+                      motor assembly
+                    </Link>
                   </li>
-                  <li className="py-2 will-change-transform">
-                    <Link href={"/"}>beverages</Link>
+                  <li className="will-change-transform">
+                    <Link className="py-2 block size-full" href={"/"}>
+                      beverages
+                    </Link>
                   </li>
-                  <li className="py-2 will-change-transform">
-                    <Link href={"/"}>medicine & foods</Link>
+                  <li className="will-change-transform">
+                    <Link className="py-2 block size-full" href={"/"}>
+                      medicine & foods
+                    </Link>
                   </li>
-
-                  <div className="absolute right-2/3 w-px top-0 h-full opacity-10 py-5">
-                    <div className="bg-black size-full" />
-                  </div>
-
-                  <li className="py-2 will-change-transform">
-                    <Link href={"/"}>farms</Link>
+                  <li className="will-change-transform">
+                    <Link className="py-2 block size-full" href={"/"}>
+                      farms
+                    </Link>
                   </li>
-                  <li className="py-2 will-change-transform">
-                    <Link href={"/"}>ghana</Link>
+                  <li className="will-change-transform">
+                    <Link className="py-2 block size-full" href={"/"}>
+                      ghana
+                    </Link>
                   </li>
                 </ul>
               </div>

@@ -12,6 +12,7 @@
     --accent-primary: #d32a30;
     --accent-secondary: #3e4095;
     --accent-primary-light: #ff5263;
+    --accent-primary-dark: #8d1f2a;
   }
 }
 
@@ -21,6 +22,7 @@
   --color-accent-primary: var(--accent-primary);
   --color-accent-secondary: var(--accent-secondary);
   --color-accent-primary-light: var(--accent-primary-light);
+  --color-accent-primary-dark: var(--accent-primary-dark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-manrope: var(--font-manrope);
@@ -30,4 +32,29 @@ body {
   background: var(--background-primary);
   color: var(--foreground);
   font-family: manrope, Arial, Helvetica, sans-serif;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateX(50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(50%) translateY(-10px);
+  }
+}
+
+@keyframes enlarge {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@utility animate-float {
+  animation: float 1.8s ease-in-out infinite;
 }
