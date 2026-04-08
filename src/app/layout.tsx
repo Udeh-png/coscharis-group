@@ -1,7 +1,18 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Geist, Geist_Mono, Manrope } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
+import { BodyVisibilityProvider } from "@/contexts/BodyVisibility";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 const manrope = Manrope({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
@@ -20,11 +31,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col py-5 px-10 max-[541px]:px-5">
-        <Navbar />
-        {children}
-      </body>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} h-full antialiased`}
+    >
+      <BodyVisibilityProvider>
+        <body className="min-h-full flex flex-col pt-5">
+          <Navbar />
+          {children}
+        </body>
+      </BodyVisibilityProvider>
     </html>
   );
 }
+// px-10 max-[541px]:px-5

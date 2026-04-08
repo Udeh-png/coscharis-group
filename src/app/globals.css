@@ -9,8 +9,9 @@
   :root {
     --background-primary: #ffffff;
     --background-secondary: #e0e0e0;
+    --background-secondary-2: #f1efef;
     --accent-primary: #d32a30;
-    --accent-secondary: #3e4095;
+    --accent-secondary: #282bc0;
     --accent-primary-light: #ff5263;
     --accent-primary-dark: #8d1f2a;
   }
@@ -19,6 +20,7 @@
 @theme inline {
   --color-background-primary: var(--background-primary);
   --color-background-secondary: var(--background-secondary);
+  --color-background-secondary-2: var(--background-secondary-2);
   --color-accent-primary: var(--accent-primary);
   --color-accent-secondary: var(--accent-secondary);
   --color-accent-primary-light: var(--accent-primary-light);
@@ -32,6 +34,7 @@ body {
   background: var(--background-primary);
   color: var(--foreground);
   font-family: manrope, Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
 @keyframes float {
@@ -57,4 +60,27 @@ body {
 
 @utility animate-float {
   animation: float 1.8s ease-in-out infinite;
+}
+
+input[type="range"] {
+  /* removing default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* creating a custom design */
+  cursor: pointer;
+  outline: none;
+  /* New additions */
+  height: 2px;
+  background-color: white;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  background-color: var(--accent-primary-light);
+  border-radius: 50%;
+  /* opacity: 0; */
 }
