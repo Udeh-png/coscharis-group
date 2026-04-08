@@ -11,6 +11,7 @@ export default function Home() {
     <div>
       <div className="h-dvh -mt-5">
         <Hero />
+        random change
       </div>
 
       {/* <motion.div
