@@ -1,33 +1,44 @@
 "use client";
 
 import Link from "next/link";
-import { FaArrowDown } from "react-icons/fa6";
-import { useState, useContext, useEffect, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { BodyVisibilityContext } from "@/contexts/BodyVisibility";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaCirclePlay } from "react-icons/fa6";
 
 const featuredDivisions = [
   {
     name: "Motors",
-    header:
-      "Driving the future of mobility with sustainable transportation solutions.",
+    label: "Mobility Leadership",
+    header: "Moving premium automotive experiences closer to more people.",
     subheader:
-      "Leading the charge in revolutionizing transportation through innovative electric vehicles and sustainable mobility solutions.",
+      "From distribution to aftersales, the business is built to make performance, trust, and service feel visible at every customer touchpoint.",
+    fact: "Nationwide sales and service footprint",
+    stat: "40+ years",
+    metric: "of operating depth across multiple sectors",
     link: "/divisions/motors",
   },
   {
     name: "Agriculture",
-    header: "Cultivating innovation for a sustainable future in agriculture.",
+    label: "Long-Horizon Growth",
+    header: "Investing in agricultural value with scale, resilience, and care.",
     subheader:
-      "Pioneering sustainable agricultural practices and innovative solutions for a greener future. We are committed to transforming agriculture through technology, research, and sustainable farming methods that ensure food security and environmental stewardship.",
+      "A future-facing business shaped around production, sustainability, and dependable execution where long-term thinking matters most.",
+    fact: "Built for food systems and durable value creation",
+    stat: "20 countries",
+    metric: "served through the group’s broader footprint",
     link: "/divisions/agriculture",
   },
   {
     name: "Technologies",
-    header: "Empowering the future with innovative technology solutions.",
+    label: "Enterprise Solutions",
+    header: "Equipping modern businesses with smarter systems.",
     subheader:
-      "Driving technological innovation to empower a smarter, more connected future. Our technology division is at the forefront of developing cutting-edge solutions that transform industries and enhance lives.",
+      "Technology operations focused on devices, business systems, and practical digital capability that helps organizations move with confidence.",
+    fact: "Reliable infrastructure for modern operations",
+    stat: "$60M",
+    metric: "yearly market capital highlighted on this page",
     link: "/divisions/technology",
   },
 ];
@@ -35,164 +46,112 @@ const featuredDivisions = [
 export default function Hero() {
   const [bodyIsVisible] = useContext(BodyVisibilityContext);
   const videoElemRef = useRef<HTMLVideoElement>(null);
-  const sliderRef = useRef<HTMLInputElement>(null);
-  const [sliderValue, setSliderValue] = useState(0);
-  const [featuredDivision, setFeaturedDivision] = useState<{
-    name: string;
-    header: string;
-    subheader: string;
-    link: string;
-  }>({
-    name: "",
-    header: "",
-    subheader: "",
-    link: "",
-  });
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    const slider = sliderRef.current;
-    const videoElem = videoElemRef.current;
-    if (!slider || !videoElem) return;
-    const interval = setInterval(() => {
-      setSliderValue(() => {
-        const duration = videoElem.duration || 0;
-        const currentTime = videoElem.currentTime || 0;
-        return (currentTime / duration) * 100;
-      });
-    }, 10);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+  const featuredDivision = featuredDivisions[activeIndex];
 
   return (
-    <div className="absolute inset-0 min-h-dvh overflow-clip text-white">
-      <div className="absolute inset-0 bg-black/40" />
+    <section className="absolute inset-0 min-h-dvh overflow-clip text-white">
       <video
         autoPlay
         loop
         muted
+        playsInline
         className="size-full object-cover"
         ref={videoElemRef}
         onTimeUpdate={(e) => {
           const elem = e.target as HTMLVideoElement;
-          if (elem.currentTime <= 6.5) {
-            setFeaturedDivision(featuredDivisions[0]);
-          } else if (elem.currentTime > 6.5 && elem.currentTime <= 13) {
-            setFeaturedDivision(featuredDivisions[1]);
-          } else if (elem.currentTime > 13 && elem.currentTime <= 20) {
-            setFeaturedDivision(featuredDivisions[2]);
+          let nextIndex = 0;
+
+          if (elem.currentTime > 13) {
+            nextIndex = 2;
+          } else if (elem.currentTime > 6.5) {
+            nextIndex = 1;
           }
+
+          setActiveIndex((prev) => (prev === nextIndex ? prev : nextIndex));
         }}
       >
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
 
-      <input
-        type="range"
-        name=""
-        id=""
-        min={0}
-        max={100}
-        className="absolute bottom-20 left-10 w-1/3 rounded-full"
-        ref={sliderRef}
-        step={0.1}
-        value={sliderValue}
-        onChange={(e) => {
-          if (videoElemRef.current) {
-            const value = parseFloat(e.target.value);
-            const duration = videoElemRef.current.duration;
-            videoElemRef.current.currentTime = (value / 100) * duration;
-          }
-        }}
-      />
+      <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(4,10,18,0.82)_10%,rgba(4,10,18,0.45)_48%,rgba(4,10,18,0.9)_100%)]" />
+      <div className="absolute inset-y-0 left-0 w-1/2 bg-linear-to-r from-black/35 to-transparent" />
+      <div className="absolute -right-32 top-24 h-72 w-72 rounded-full bg-accent-primary/30 blur-3xl" />
+      <div className="absolute -bottom-28 left-1/3 h-64 w-64 rounded-full bg-accent-secondary/25 blur-3xl" />
 
-      <div className="absolute left-20 max-[541px]:left-3 top-25 pb-4 max-[541px]:top-20 max-w-lg after:absolute after:bottom-0 after:left-0 after:w-1/2 after:h-0.5 after:bg-accent-primary overflow-clip">
-        <AnimatePresence>
-          <motion.p
-            initial={{
-              translateY: "100%",
-              opacity: 0,
-            }}
-            animate={{
-              translateY: 0,
-              opacity: 1,
-              transition: {
-                duration: 1.5,
-                delay: 1,
-              },
-            }}
-            exit={{
-              translateY: "100%",
-              opacity: 0,
-              position: "absolute",
-              transition: {
-                duration: 1,
-              },
-            }}
-            className="text-4xl max-[541px]:text-2xl font-bold capitalize leading-tight"
-            key={featuredDivision.name}
-          >
-            {featuredDivision.header}
-          </motion.p>
-        </AnimatePresence>
-      </div>
+      <div className="absolute inset-x-0 top-0 mx-auto flex min-h-dvh max-w-400 items-center px-10 pb-14 pt-28 max-[955px]:items-end max-[955px]:pb-10 max-[541px]:px-5 max-[541px]:pt-24">
+        <div className="grid w-full gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+          <div className="max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-white/75 backdrop-blur-md"
+            >
+              <span className="inline-block size-2 rounded-full bg-accent-primary" />
+              Coscharis Group
+            </motion.div>
 
-      <div className="absolute max-[541px]:right-1 right-14 pr-6 max-[541px]:pr-3 max-[541px]:bottom-30 bottom-20 max-[541px]:max-w-full max-w-lg after:absolute after:bottom-0 after:right-0 after:w-0.5 after:h-full after:bg-accent-secondary overflow-clip">
-        <AnimatePresence>
-          <motion.div
-            className="flex flex-col items-end gap-y-5"
-            initial={{
-              translateX: "100%",
-              opacity: 0,
-            }}
-            animate={{
-              translateX: 0,
-              opacity: 1,
-              transition: {
-                duration: 1.5,
-                delay: 1,
-              },
-            }}
-            exit={{
-              translateX: "100%",
-              opacity: 0,
-              position: "absolute",
-              transition: {
-                duration: 1,
-              },
-            }}
-            key={featuredDivision.name}
-          >
-            <p className="max-[541px]:text-sm text-right leading-relaxed">
-              {featuredDivision.subheader}
-            </p>
+            <div className="mt-7 overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={featuredDivision.name}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -40 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                  <p className="text-sm font-semibold uppercase tracking-[0.35em] text-white/55">
+                    {featuredDivision.label}
+                  </p>
+                  <h1 className="mt-5 max-w-4xl text-6xl font-black text-balance max-[1100px]:text-5xl max-[541px]:text-[2.55rem]">
+                    {featuredDivision.header}
+                  </h1>
+                  <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 max-[541px]:text-base">
+                    {featuredDivision.subheader}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
-            <div className="">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+              className="mt-9 max-[541px]:mt-4 flex flex-wrap items-center gap-4"
+            >
               <Link
                 href={featuredDivision.link}
-                className="block px-7 w-fit py-3 text-sm tracking-widest font-medium bg-background-secondary text-accent-secondary transition-colors duration-300"
+                className="inline-flex items-center gap-2 rounded-full bg-accent-primary px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-transform duration-300 hover:translate-x-1"
               >
-                Coscharis {featuredDivision.name}
-                <HiOutlineArrowLongRight className="inline-block ml-2 text-lg" />
+                Explore {featuredDivision.name}
+                <HiOutlineArrowLongRight className="text-lg" />
               </Link>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+
+              <Link
+                href="/contact-us"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/8 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white/88 backdrop-blur-md transition-colors duration-300 hover:bg-white/12"
+              >
+                <FaCirclePlay className="text-base" />
+                Start A Conversation
+              </Link>
+            </motion.div>
+          </div>
+        </div>
       </div>
 
       <AnimatePresence>
         {!bodyIsVisible && (
           <motion.div
             exit={{ opacity: 0 }}
-            className="absolute bottom-5 left-1/2 -translate-x-1/2 text-xs text-white/40 flex flex-col items-center animate-pulse"
+            className="absolute bottom-5 left-1/2 flex -translate-x-1/2 flex-col items-center text-xs text-white/45"
           >
-            <p className="">Scroll Down</p>
-            <div className="h-10 w-0.5 bg-linear-to-b from-transparent to-accent-primary" />
+            <p className="uppercase tracking-[0.28em]">Scroll Down</p>
+            <div className="mt-3 h-10 w-0.5 bg-linear-to-b from-transparent to-accent-primary" />
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </section>
   );
 }
