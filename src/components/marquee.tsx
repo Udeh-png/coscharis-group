@@ -30,7 +30,7 @@ const brandIcons = [
 
 export const Marquee = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden max-[541px]:mb-3">
       <div className="animate-marquee flex w-max items-center text-6xl text-black/40 max-[541px]:text-5xl">
         {[...brandIcons, ...brandIcons].map((Icon, index) => (
           <div

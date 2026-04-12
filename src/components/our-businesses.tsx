@@ -240,7 +240,7 @@ export const OurBusinesses = () => {
                       type="button"
                       className="mt-8 inline-flex items-center gap-2 rounded-full bg-red-700 px-5 py-3 text-sm font-semibold text-white transition-transform duration-300 hover:translate-x-1"
                     >
-                      Explore this business
+                      Explore {activeBusiness.name}
                       <HiOutlineArrowLongRight className="text-lg" />
                     </button>
                   </div>

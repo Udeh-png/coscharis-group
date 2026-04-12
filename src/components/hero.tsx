@@ -123,7 +123,7 @@ export default function Hero() {
             >
               <Link
                 href={featuredDivision.link}
-                className="inline-flex items-center gap-2 rounded-full bg-accent-primary px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-transform duration-300 hover:translate-x-1"
+                className="inline-flex items-center gap-2 rounded-full bg-accent-primary px-6 py-3 text-sm font-semibold text-white transition-transform duration-300 hover:translate-x-1"
               >
                 Explore {featuredDivision.name}
                 <HiOutlineArrowLongRight className="text-lg" />
@@ -131,7 +131,7 @@ export default function Hero() {
 
               <Link
                 href="/contact-us"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/8 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white/88 backdrop-blur-md transition-colors duration-300 hover:bg-white/12"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/8 px-6 py-3 text-sm font-semibold text-white/88 backdrop-blur-md transition-colors duration-300 hover:bg-white/12"
               >
                 <FaCirclePlay className="text-base" />
                 Start A Conversation
