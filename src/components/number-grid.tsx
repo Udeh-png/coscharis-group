@@ -80,7 +80,7 @@ export const NumberGrid = () => {
   };
 
   return (
-    <section className="px-10 mb-15 max-[541px]:mb-7 max-[541px]:px-5">
+    <section className="px-10 max-[541px]:px-5">
       <motion.div
         onViewportEnter={startCounting}
         viewport={{ once: true, amount: 0.35 }}

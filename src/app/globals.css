@@ -28,6 +28,10 @@ body {
   scroll-behavior: smooth;
 }
 
+aside::-webkit-scrollbar {
+  width: 0;
+}
+
 @keyframes float {
   0%,
   100% {

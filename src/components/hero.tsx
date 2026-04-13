@@ -83,17 +83,7 @@ export default function Hero() {
       <div className="absolute inset-x-0 top-0 mx-auto flex min-h-dvh max-w-400 items-center px-10 pb-14 pt-28 max-[955px]:items-end max-[955px]:pb-10 max-[541px]:px-5 max-[541px]:pt-24">
         <div className="grid w-full gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
           <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-white/75 backdrop-blur-md"
-            >
-              <span className="inline-block size-2 rounded-full bg-accent-primary" />
-              Coscharis Group
-            </motion.div>
-
-            <div className="mt-7 overflow-hidden">
+            <div className="overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={featuredDivision.name}
@@ -123,7 +113,7 @@ export default function Hero() {
             >
               <Link
                 href={featuredDivision.link}
-                className="inline-flex items-center gap-2 rounded-full bg-accent-primary px-6 py-3 text-sm font-semibold text-white transition-transform duration-300 hover:translate-x-1"
+                className="inline-flex items-center gap-2 bg-red-700 px-6 py-3 text-xs uppercase tracking-widest font-semibold text-white transition-transform duration-300 hover:translate-x-1"
               >
                 Explore {featuredDivision.name}
                 <HiOutlineArrowLongRight className="text-lg" />
@@ -131,7 +121,7 @@ export default function Hero() {
 
               <Link
                 href="/contact-us"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/8 px-6 py-3 text-sm font-semibold text-white/88 backdrop-blur-md transition-colors duration-300 hover:bg-white/12"
+                className="inline-flex items-center gap-2 border border-white/20 bg-white/8 px-6 py-3 text-xs uppercase tracking-widest font-semibold text-white/88 backdrop-blur-md transition-colors duration-300 hover:bg-white/12"
               >
                 <FaCirclePlay className="text-base" />
                 Start A Conversation
