@@ -4,7 +4,7 @@ import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
 export const NewsFeeds = () => {
   return (
-    <section className="mt-15 max-[541px]:mt-10 px-10 max-[541px]:px-5 mb-200">
+    <section className="mt-15 max-[541px]:mt-10 px-10 max-[541px]:px-5">
       <p className="text-sm font-semibold uppercase tracking-[0.35em] text-black/45">
         news feeds
       </p>
@@ -22,7 +22,7 @@ export const NewsFeeds = () => {
           </div>
 
           <div className="mt-3">
-            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-black/45">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-black/45">
               development
             </p>
 
