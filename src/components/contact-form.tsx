@@ -49,7 +49,7 @@ export const ContactForm = () => {
     watch,
     handleSubmit,
     trigger,
-    formState: { errors },
+    formState: { errors, isReady },
   } = useForm<ContactFormType>({
     resolver: zodResolver(contactFormSchema),
   });
@@ -83,7 +83,7 @@ export const ContactForm = () => {
   const submitForm: SubmitHandler<ContactFormType> = (data) => {};
 
   return (
-    <section className="mt-15 mb-32 bg-black/5 px-10 py-8 backdrop-blur-sm max-[900px]:px-6 max-[900px]:py-6 max-[541px]:mt-10 max-[541px]:mb-24 max-[541px]:px-5 max-[541px]:py-5">
+    <section className="mt-15 bg-black/5 px-10 py-8 backdrop-blur-sm max-[900px]:px-6 max-[900px]:py-6 max-[541px]:mt-10 max-[541px]:px-5 max-[541px]:py-5">
       <p className="text-sm font-semibold uppercase tracking-[0.35em] text-black/45">
         get in touch
       </p>
@@ -129,7 +129,7 @@ export const ContactForm = () => {
                   Headquarters
                 </p>
                 <p className="mt-2 max-w-sm text-base leading-relaxed text-black/85">
-                  267 Westwood Crescent, Richmond BV V&amp;C 2P9, Canada
+                  Km 32 Lekki - Epe Expressway, Awoyaya, Lagos, Nigeria
                 </p>
               </div>
             </div>
@@ -166,7 +166,7 @@ export const ContactForm = () => {
         </aside>
 
         <form
-          className="max-[1050px]:order-first max-[1050px]:max-w-none border bg-white/40 border-black/8 p-8 shadow-[0_24px_70px_rgba(0,0,0,0.05)] max-[900px]:p-6 max-[541px]:p-5"
+          className="max-[1050px]:order-first max-[1050px]:max-w-none border bg-white/40 border-black/8 p-8 shadow-[0_24px_70px_rgba(0,0,0,0.05)] max-[900px]:p-6 max-[541px]:p-5 rounded-md"
           onSubmit={handleSubmit(submitForm)}
         >
           <div className="flex h-full flex-col gap-y-8 max-[541px]:gap-y-7">
@@ -254,15 +254,18 @@ export const ContactForm = () => {
                       <motion.div
                         className="absolute inset-x-0 top-full z-10 mt-2 origin-top border border-black/8 bg-white shadow-[0_18px_40px_rgba(0,0,0,0.08)] text-sm text-black/70 overflow-clip"
                         initial={{
-                          height: 0,
+                          translateY: -50,
+                          pointerEvents: "none",
                           opacity: 0,
                         }}
                         animate={{
-                          height: "auto",
+                          translateY: 0,
+                          pointerEvents: "auto",
                           opacity: 1,
                         }}
                         exit={{
-                          height: 0,
+                          translateY: -50,
+                          pointerEvents: "none",
                           opacity: 0,
                         }}
                         transition={{
@@ -351,7 +354,7 @@ export const ContactForm = () => {
               </p>
               <button
                 type="submit"
-                className="inline-flex cursor-pointer items-center gap-3 bg-red-700 px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-white transition-all duration-300 hover:translate-x-1 hover:bg-black"
+                className="inline-flex cursor-pointer items-center gap-3 bg-red-700 px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-white transition-all duration-300 hover:translate-x-1 hover:bg-black disabled:bg-gray-300"
               >
                 Send Message
                 <HiOutlineArrowLongRight className="text-lg" />

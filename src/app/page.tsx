@@ -27,7 +27,6 @@ export default function Home() {
           <NumberGrid />
           <OurBusinesses />
           <NewsFeeds />
-          <ContactForm />
         </motion.div>
       </div>
     </div>

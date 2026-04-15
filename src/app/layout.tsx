@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Manrope } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { BodyVisibilityProvider } from "@/contexts/BodyVisibility";
+import { Footer } from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +40,7 @@ export default function RootLayout({
         <body className="min-h-full flex flex-col pt-5">
           <Navbar />
           {children}
+          <Footer />
         </body>
       </BodyVisibilityProvider>
     </html>

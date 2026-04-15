@@ -7,6 +7,13 @@
   --accent-secondary: #282bc0;
   --accent-primary-light: #ff5263;
   --accent-primary-dark: #8d1f2a;
+  --footer-dropdown-dir: 20px;
+}
+
+@media screen and (width <= 1100px) {
+  :root {
+    --footer-dropdown-dir: -20px;
+  }
 }
 
 @theme inline {
