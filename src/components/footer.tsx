@@ -66,7 +66,7 @@ export const Footer = () => {
 
   return (
     <footer className="mt-10 bg-black/92 px-7 pt-7 text-white/90 max-[900px]:px-5 max-[541px]:pt-6">
-      <div className="flex gap-8 max-[1100px]:flex-col-reverse max-[700px]:">
+      <div className="flex gap-8 max-[1100px]:flex-col-reverse">
         <div className="grid grid-cols-3 gap-8 max-[1100px]:grid-cols-2 max-[1100px]:gap-y-8 h-fit flex-3">
           <div>
             <h3 className="font-semibold text-xl mb-2.5 max-[541px]:mb-1 text-white">
@@ -237,20 +237,20 @@ export const Footer = () => {
               <p className="text-sm font-semibold uppercase tracking-[0.3em]">
                 Reach out
               </p>
-              <div className="mt-3 space-y-4">
-                <div className="flex gap-2 text-sm text-white/70">
+              <div className="mt-3 space-y-4 text-xs max-[1100px]:text-sm text-white/70">
+                <div className="flex gap-2">
                   <FaLocationDot className="mt-0.5 shrink-0" />
                   <p className="align-text-middle">
                     Km 32 Lekki - Epe Expressway, Awoyaya, Lagos, Nigeria
                   </p>
                 </div>
 
-                <div className="flex gap-2 text-sm text-white/70">
+                <div className="flex gap-2">
                   <FaPhone className="mt-0.5 shrink-0" />
                   <p className="align-text-middle">+234-808-116-9830</p>
                 </div>
 
-                <div className="flex gap-2 text-sm text-white/70">
+                <div className="flex gap-2">
                   <MdEmail className="mt-0.5 shrink-0" />
                   <p className="align-text-middle">
                     leonwokedichisom@gmail.com

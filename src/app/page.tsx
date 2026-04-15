@@ -8,6 +8,7 @@ import { NewsFeeds } from "@/components/news-feed";
 import { BodyVisibilityContext } from "@/contexts/BodyVisibility";
 import { motion } from "framer-motion";
 import { useContext } from "react";
+import { ContactUs } from "@/components/contact-us";
 
 export default function Home() {
   const [, setBodyIsVisible] = useContext(BodyVisibilityContext);
@@ -26,6 +27,7 @@ export default function Home() {
           <NumberGrid />
           <OurBusinesses />
           <NewsFeeds />
+          <ContactUs />
         </motion.div>
       </div>
     </div>
