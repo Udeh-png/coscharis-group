@@ -1,12 +1,6 @@
 import Link from "next/link";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
-const contactHighlights = [
-  "Sales enquiries",
-  "Partnership discussions",
-  "Distribution opportunities",
-];
-
 export const ContactUs = () => {
   return (
     <section className="relative mt-15 overflow-hidden bg-black/5 text-black max-[541px]:mt-10 -mb-10">
