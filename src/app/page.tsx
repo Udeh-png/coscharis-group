@@ -8,7 +8,6 @@ import { NewsFeeds } from "@/components/news-feed";
 import { BodyVisibilityContext } from "@/contexts/BodyVisibility";
 import { motion } from "framer-motion";
 import { useContext } from "react";
-import { ContactForm } from "@/components/contact-form";
 
 export default function Home() {
   const [, setBodyIsVisible] = useContext(BodyVisibilityContext);

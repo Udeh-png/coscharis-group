@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/incompatible-library */
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -49,7 +50,7 @@ export const ContactForm = () => {
     watch,
     handleSubmit,
     trigger,
-    formState: { errors, isReady },
+    formState: { errors },
   } = useForm<ContactFormType>({
     resolver: zodResolver(contactFormSchema),
   });
@@ -80,7 +81,7 @@ export const ContactForm = () => {
     };
   }, [dropdownClicked]);
 
-  const submitForm: SubmitHandler<ContactFormType> = (data) => {};
+  const submitForm: SubmitHandler<ContactFormType> = () => {};
 
   return (
     <section className="mt-15 bg-black/5 px-10 py-8 backdrop-blur-sm max-[900px]:px-6 max-[900px]:py-6 max-[541px]:mt-10 max-[541px]:px-5 max-[541px]:py-5">
