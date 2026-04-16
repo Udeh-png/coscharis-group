@@ -20,7 +20,7 @@ const businesses = [
     description:
       "A high-visibility automotive business built around premium vehicle brands, nationwide reach, and dependable aftersales support that keeps customers moving.",
     eyebrow: "01",
-    imageSrc: "/cars.jpg",
+    imageSrc: "/images/cars.jpg",
     stat: "Nationwide",
     statLabel: "Sales and service footprint",
     highlights: [
@@ -37,7 +37,7 @@ const businesses = [
     description:
       "Technology operations focused on infrastructure, devices, and business systems that help modern organizations run smarter, faster, and more reliably.",
     eyebrow: "02",
-    imageSrc: "/tech.jpg",
+    imageSrc: "/images/tech.jpg",
     stat: "Connected",
     statLabel: "Digital systems for modern operations",
     highlights: [
