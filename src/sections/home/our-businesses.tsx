@@ -3,14 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
-import {
-  FaCarSide,
-  FaDisplay,
-  FaBottleWater,
-  FaWheatAwn,
-  FaTruckFast,
-  FaCapsules,
-} from "react-icons/fa6";
 
 const businesses = [
   {
@@ -28,7 +20,6 @@ const businesses = [
       "Aftersales, parts distribution, and workshop excellence",
       "A brand experience designed to feel premium at every touchpoint",
     ],
-    Icon: FaCarSide,
   },
   {
     id: "technologies",
@@ -45,7 +36,6 @@ const businesses = [
       "Solutions built for resilience, security, and continuity",
       "Technology partnerships that turn complexity into confidence",
     ],
-    Icon: FaDisplay,
   },
   {
     id: "mobility",
@@ -62,7 +52,6 @@ const businesses = [
       "Customer-first mobility experiences across touchpoints",
       "Systems that prioritize uptime, service quality, and trust",
     ],
-    Icon: FaTruckFast,
   },
   {
     id: "beverages",
@@ -79,7 +68,6 @@ const businesses = [
       "Products positioned for memorability and repeat purchase",
       "Execution that balances reach, consistency, and freshness",
     ],
-    Icon: FaBottleWater,
   },
   {
     id: "medicine-foods",
@@ -96,7 +84,6 @@ const businesses = [
       "Supply chains that support product confidence",
       "A practical business with meaningful everyday impact",
     ],
-    Icon: FaCapsules,
   },
   {
     id: "farms",
@@ -113,7 +100,6 @@ const businesses = [
       "A long-term play in value creation and resilience",
       "Sustainability and stewardship built into the business story",
     ],
-    Icon: FaWheatAwn,
   },
 ];
 

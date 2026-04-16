@@ -17,6 +17,7 @@ import {
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import { MdEmail } from "react-icons/md";
 import z from "zod";
+import { Businesses } from "@/data";
 
 const newsLetterSignupSchema = z.object({
   emailField: z.email(),
@@ -31,14 +32,7 @@ export const Footer = () => {
       resolver: zodResolver(newsLetterSignupSchema),
     });
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const businessOptions = [
-    "Motors",
-    "Technologies",
-    "Mobility",
-    "Beverages",
-    "Medicine & Foods",
-    "Farms",
-  ];
+  const businessOptions = ["All", ...Businesses, "Non-Specific"];
 
   const submitForm: SubmitHandler<NewsLetterSignupType> = (data) => {
     console.log(data);
@@ -57,10 +51,18 @@ export const Footer = () => {
       }
     };
 
+    const handleEscKeyPress = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setBusinessesDropdown(false);
+      }
+    };
+
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keyup", handleEscKeyPress);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keyup", handleEscKeyPress);
     };
   }, []);
 
@@ -153,7 +155,7 @@ export const Footer = () => {
                   <AnimatePresence>
                     {businessesDropdown && (
                       <motion.div
-                        className="absolute inset-x-0 bottom-full max-[1100px]:bottom-auto max-[1100px]:top-full z-10 mt-3 overflow-hidden border border-white/10 bg-[#151515] shadow-[0_22px_50px_rgba(0,0,0,0.35)]"
+                        className="absolute inset-x-0 bottom-full max-[1100px]:bottom-auto max-[1100px]:top-full z-10 mt-3 overflow-hidden border border-white/10 bg-[#151515] shadow-[0_22px_50px_rgba(0,0,0,0.35)] caret-transparent"
                         initial={{
                           opacity: 0,
                           y: "var(--footer-dropdown-dir)",
