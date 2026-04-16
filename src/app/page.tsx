@@ -1,14 +1,14 @@
 "use client";
 
-import Hero from "@/components/hero";
-import { Marquee } from "@/components/marquee";
-import { NumberGrid } from "@/components/number-grid";
-import { OurBusinesses } from "@/components/our-businesses";
-import { NewsFeeds } from "@/components/news-feed";
+import Hero from "@/sections/home/hero";
+import { Marquee } from "@/sections/home/marquee";
+import { NumberGrid } from "@/sections/home/social-proof";
+import { OurBusinesses } from "@/sections/home/our-businesses";
+import { NewsFeeds } from "@/sections/home/news-feed";
 import { BodyVisibilityContext } from "@/contexts/BodyVisibility";
 import { motion } from "framer-motion";
 import { useContext } from "react";
-import { ContactUs } from "@/components/contact-us";
+import { ContactUs } from "@/sections/home/contact-us";
 
 export default function Home() {
   const [, setBodyIsVisible] = useContext(BodyVisibilityContext);

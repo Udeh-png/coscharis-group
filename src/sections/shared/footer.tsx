@@ -141,7 +141,7 @@ export const Footer = () => {
                     onClick={() => setBusinessesDropdown(!businessesDropdown)}
                   >
                     <span
-                      className={`${selectedBusiness ? "text-inherit" : "text-white/50"}`}
+                      className={`${selectedBusiness ? "text-inherit" : "text-white/40"}`}
                     >
                       {selectedBusiness || "Select a business"}
                     </span>

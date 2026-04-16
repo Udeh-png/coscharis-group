@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Manrope } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { BodyVisibilityProvider } from "@/contexts/BodyVisibility";
-import { Footer } from "@/components/footer";
+import { Footer } from "@/sections/shared/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
