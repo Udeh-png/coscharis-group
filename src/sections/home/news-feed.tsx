@@ -13,7 +13,7 @@ export const NewsFeeds = () => {
         <aside className="grid grid-rows-[1.5fr_1fr] max-[541px]:grid-rows-2 w-full aspect-square max-[1050px]:aspect-auto">
           <div className="relative">
             <Image
-              src={"/headline-img.jpg"}
+              src={"/images/headline-img.jpg"}
               alt="headline image"
               fill
               sizes=""
@@ -55,7 +55,7 @@ export const NewsFeeds = () => {
           <div className="grid grid-cols-[1fr_1.5fr] gap-x-3.5">
             <div className="relative size-full max-h-40">
               <Image
-                src={"/news1-image.jpg"}
+                src={"/images/news1-image.jpg"}
                 alt=""
                 fill
                 sizes=""
@@ -95,7 +95,7 @@ export const NewsFeeds = () => {
           <div className="grid grid-cols-[1fr_1.5fr] gap-x-3.5">
             <div className="relative size-full max-h-40">
               <Image
-                src={"/news2-image.jpg"}
+                src={"/images/news2-image.jpg"}
                 alt=""
                 fill
                 sizes=""
@@ -179,7 +179,7 @@ export const NewsFeeds = () => {
           <div className="grid grid-cols-[1fr_1.5fr] gap-x-3.5">
             <div className="relative size-full max-h-40">
               <Image
-                src={"/news4-image.jpg"}
+                src={"/images/news4-image.jpg"}
                 alt=""
                 fill
                 sizes=""

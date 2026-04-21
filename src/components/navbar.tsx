@@ -12,7 +12,7 @@ export const Navbar = () => {
         href="/"
         className="relative w-20 h-10 max-[460px]:w-16 max-[460px]:h-8"
       >
-        <Image src={"/logo.png"} alt="" fill sizes="" />
+        <Image src={"/images/logo.png"} alt="" fill sizes="" />
       </Link>
       <ul className="flex gap-10 uppercase text-[0.70rem] font-semibold items-center max-[955px]:hidden">
         <li>
@@ -26,7 +26,10 @@ export const Navbar = () => {
               <div className="bg-background-primary text-black shadow rounded-md relative">
                 <ul className="uppercase text-[0.70rem] font-semibold gap-y-2 flex flex-col p-5">
                   <li className="will-change-transform">
-                    <Link className="py-2 block size-full" href={"/"}>
+                    <Link
+                      className="py-2 block size-full"
+                      href={"/coscharis-motors"}
+                    >
                       {/* TODO: add after element with bg of background-primary to each nav link that grows horizontally on hover */}
                       motors
                     </Link>
@@ -119,7 +122,7 @@ export const Navbar = () => {
             href="/"
             className="relative w-10 h-10 max-[460px]:w-16 max-[460px]:h-8 block"
           >
-            <Image src={"/logo.png"} alt="" fill sizes="" />
+            <Image src={"/images/logo.png"} alt="" fill sizes="" />
           </Link>
 
           <label

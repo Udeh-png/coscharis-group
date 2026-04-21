@@ -86,7 +86,7 @@ export const NumberGrid = () => {
         viewport={{ once: true, amount: 0.35 }}
         className="relative overflow-hidden text-black"
       >
-        <div className="relative space-y-20 max-[541px]:space-y-10">
+        <div className="relative space-y-20 max-[770px]:space-y-10">
           <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-black/45">
@@ -107,7 +107,7 @@ export const NumberGrid = () => {
             </div>
           </div>
 
-          <div className="grid gap-4 grid-cols-4 max-[541px]:grid-cols-1">
+          <div className="grid gap-4 grid-cols-4 max-[770px]:grid-cols-1">
             {stats.map((stat, index) => (
               <motion.article
                 key={stat.label}

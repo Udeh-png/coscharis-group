@@ -7,6 +7,12 @@ const nextConfig: NextConfig = {
       {
         hostname: "lh3.googleusercontent.com",
       },
+      {
+        hostname: "www.pngarts.com",
+      },
+      {
+        hostname: "e7.pngegg.com",
+      },
     ],
   },
 };
