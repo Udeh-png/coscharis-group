@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
         hostname: "www.pngarts.com",
       },
       {
-        hostname: "e7.pngegg.com",
+        hostname: "coscharisgroup.net",
       },
     ],
   },

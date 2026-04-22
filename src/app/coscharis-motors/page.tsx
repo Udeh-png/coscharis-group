@@ -1,10 +1,13 @@
-"use client";
+import { FeaturedVehiclesGrid } from "@/sections/motors/featuredVehiclesGrid";
 import { Hero } from "@/sections/motors/hero";
+import { WhyChooseUs } from "@/sections/motors/WhyChooseUs";
 
 export default function CoscharisMotors() {
   return (
     <div className="mb-100">
       <Hero />
+      <FeaturedVehiclesGrid />
+      <WhyChooseUs />
     </div>
   );
 }

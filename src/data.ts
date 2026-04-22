@@ -14,7 +14,7 @@ export const FeaturedCars = [
       "https://www.pngarts.com/files/1/Renault-PNG-Transparent-Image.png",
     category: "Compact Sudan",
     keySpecs: ["manual", "4 doors", "110hp"],
-    startingPrice: "5000000",
+    startingPrice: "53000000",
   },
   {
     name: "2023 Land Rover Defender",

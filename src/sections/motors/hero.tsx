@@ -25,7 +25,7 @@ export const Hero = () => {
     <div className="h-[90dvh] relative -mt-10 text-white">
       <div className="absolute inset-0">
         <Image
-          src="/images/ford.jpg"
+          src="https://coscharisgroup.net/wp-content/themes/coscharis1/images/2.jpg"
           alt=""
           fill
           sizes="200vw"
