@@ -1,7 +1,7 @@
 export const WhyChooseUs = () => {
   return (
     <section className="relative">
-      <div className="absolute inset-0 bg-black/5" />
+      <div className="absolute inset-0" />
       <div className="relative py-15 px-5 md:px-10 max-[770px]:py-7">
         <p className="text-sm uppercase text-black/45 tracking-[0.35em] font-semibold mb-5 max-[770px]:mb-3">
           Why Choose Us
@@ -17,8 +17,8 @@ export const WhyChooseUs = () => {
           quas reiciendis veritatis explicabo.
         </p>
 
-        <div className="grid grid-cols-3 gap-15 max-[770px]:gap-10 max-[990px]:grid-cols-1">
-          <div>
+        <div className="grid grid-cols-3 max-[770px]:gap-10 max-[990px]:grid-cols-1">
+          <div className="border-r-2 border-red-700 px-7 max-[770px]:border-0 max-[770px]:px-0">
             <div className="flex gap-4 mb-2">
               <span className="text-sm font-black text-black/30">01</span>
               <p className="font-bold">
@@ -34,7 +34,7 @@ export const WhyChooseUs = () => {
             </p>
           </div>
 
-          <div>
+          <div className="border-r-2 border-red-700 px-7 max-[770px]:border-0 max-[770px]:px-0">
             <div className="flex gap-4 mb-2">
               <span className="text-sm font-black text-black/30">02</span>
               <p className="font-bold">Consectetur adipisicing elit</p>
@@ -50,7 +50,7 @@ export const WhyChooseUs = () => {
             </p>
           </div>
 
-          <div>
+          <div className="px-7 max-[770px]:px-0">
             <div className="flex gap-4 mb-2">
               <span className="text-sm font-black text-black/30">03</span>
               <p className="font-bold">Lorem Ipsum</p>

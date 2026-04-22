@@ -50,12 +50,12 @@ export const FeaturedVehiclesGrid = () => {
                 ))}
               </div>
 
-              <div className="mt-6 flex items-end justify-between gap-4 border-t border-black/10 pt-5">
-                <div>
+              <div className="mt-6 flex max-[541px]:flex-col max-[541px]:items-stretch items-end justify-between gap-4 border-t border-black/10 pt-5">
+                <div className="flex flex-col gap-2 max-[541px]:flex-row max-[541px]:items-center max-[541px]:justify-between">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-black/45">
                     Starting From
                   </p>
-                  <p className="mt-2 text-2xl font-black text-black">
+                  <p className="text-2xl font-black text-black">
                     {new Intl.NumberFormat("en-NG", {
                       style: "currency",
                       currency: "NGN",
@@ -66,7 +66,7 @@ export const FeaturedVehiclesGrid = () => {
 
                 <Link
                   href="/"
-                  className="inline-flex items-center gap-2 bg-red-700 px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white transition-transform duration-300 hover:translate-x-1"
+                  className="inline-flex items-center gap-2 bg-red-700 px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white transition-transform duration-300 hover:translate-x-1 max-[541px]:w-fit max-[541px]:self-end"
                 >
                   Enquire Now
                   <HiOutlineArrowLongRight className="text-lg" />
@@ -76,7 +76,7 @@ export const FeaturedVehiclesGrid = () => {
           ))}
         </div>
 
-        <div className="flex justify-end">
+        <div className="flex justify-end max-[770px]:justify-start">
           <Link
             href="/"
             className="inline-flex items-center gap-2 bg-red-700 px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white transition-transform duration-300 hover:translate-x-1 max-[770px]:mt-3"

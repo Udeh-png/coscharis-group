@@ -1,5 +1,6 @@
 import { FeaturedVehiclesGrid } from "@/sections/motors/featuredVehiclesGrid";
 import { Hero } from "@/sections/motors/hero";
+import { OurServices } from "@/sections/motors/OurServices";
 import { WhyChooseUs } from "@/sections/motors/WhyChooseUs";
 
 export default function CoscharisMotors() {
@@ -7,6 +8,7 @@ export default function CoscharisMotors() {
     <div className="mb-100">
       <Hero />
       <FeaturedVehiclesGrid />
+      <OurServices />
       <WhyChooseUs />
     </div>
   );

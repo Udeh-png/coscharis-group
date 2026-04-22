@@ -68,3 +68,30 @@ export const FeaturedCars = [
     startingPrice: "38000000",
   },
 ];
+
+export const CoscharisMotorsServices = [
+  {
+    eyebrow: "01",
+    title: "New & Second-Hand Vehicle Sales",
+    description:
+      "Explore our extensive inventory of new and pre-owned vehicles, including sedans, SUVs, trucks, and luxury cars. Our knowledgeable sales team is here to help you find the perfect vehicle that suits your needs and budget.",
+  },
+  {
+    eyebrow: "02",
+    title: "After-Sales & Maintenance",
+    description:
+      "Our state-of-the-art service center is staffed with certified technicians who provide comprehensive maintenance and repair services. From routine oil changes to complex engine repairs, we ensure your vehicle stays in optimal condition.",
+  },
+  {
+    eyebrow: "03",
+    title: "Vehicle Assembly",
+    description:
+      "We offer flexible financing solutions to make your vehicle purchase affordable. Our finance experts work with a network of lenders to secure competitive rates and terms that fit your budget.",
+  },
+  {
+    eyebrow: "04",
+    title: "Genuine Parts & AutoCare",
+    description:
+      "We provide a wide range of genuine parts and accessories to keep your vehicle running smoothly. Whether you need replacement parts or want to customize your vehicle, we have you covered with high-quality products.",
+  },
+];
