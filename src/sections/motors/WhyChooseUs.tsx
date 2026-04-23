@@ -2,7 +2,7 @@ export const WhyChooseUs = () => {
   return (
     <section className="relative">
       <div className="absolute inset-0" />
-      <div className="relative py-15 px-5 md:px-10 max-[770px]:py-7">
+      <div className="relative py-10 px-5 md:px-10 max-[770px]:py-7">
         <p className="text-sm uppercase text-black/45 tracking-[0.35em] font-semibold mb-5 max-[770px]:mb-3">
           Why Choose Us
         </p>
@@ -10,7 +10,7 @@ export const WhyChooseUs = () => {
           What makes us Different from the rest?
         </h3>
 
-        <p className="text-black/45 max-w-3xl mb-10">
+        <p className="text-black/75 max-w-3xl mb-10">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat
           dolores voluptatum aut veritatis fugit neque at possimus! Quam rem
           molestias deleniti voluptatibus similique eveniet, accusantium eum,

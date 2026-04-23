@@ -67,7 +67,7 @@ export const Footer = () => {
   }, []);
 
   return (
-    <footer className="mt-10 bg-black/92 px-7 pt-7 text-white/90 max-[900px]:px-5 max-[541px]:pt-6">
+    <footer className="bg-black/92 px-7 pt-7 text-white/90 max-[900px]:px-5 max-[541px]:pt-6">
       <div className="flex gap-8 max-[1100px]:flex-col-reverse">
         <div className="grid grid-cols-3 gap-8 max-[1100px]:grid-cols-2 max-[1100px]:gap-y-8 h-fit flex-3">
           <div>

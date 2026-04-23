@@ -68,7 +68,7 @@ export const FeaturedVehiclesGrid = () => {
                   href="/"
                   className="inline-flex items-center gap-2 bg-red-700 px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white transition-transform duration-300 hover:translate-x-1 max-[541px]:w-fit max-[541px]:self-end"
                 >
-                  Enquire Now
+                  Book Test Drive
                   <HiOutlineArrowLongRight className="text-lg" />
                 </Link>
               </div>

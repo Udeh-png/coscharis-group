@@ -3,7 +3,7 @@ import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
 export const ContactUs = () => {
   return (
-    <section className="relative mt-15 overflow-hidden bg-black/5 text-black max-[541px]:mt-10 -mb-10">
+    <section className="relative mt-15 overflow-hidden bg-black/5 text-black max-[541px]:mt-10">
       <div className="relative grid min-h-96 grid-cols-[1.15fr_0.85fr] gap-10 px-10 py-14 max-[980px]:grid-cols-1 max-[980px]:gap-5 max-[980px]:px-6 max-[980px]:py-10 max-[541px]:px-5 max-[541px]:py-8">
         <div className="flex flex-col justify-between">
           <div>
