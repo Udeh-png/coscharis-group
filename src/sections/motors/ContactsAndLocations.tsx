@@ -1,12 +1,38 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaChevronDown } from "react-icons/fa6";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
 export const ContactsAndLocations = () => {
   const [selectedLocation, setSelectedLocation] = useState("Lagos");
   const [showLocations, setShowLocations] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setShowLocations(false);
+      }
+    };
+
+    const handleEscClick = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setShowLocations(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keyup", handleEscClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keyup", handleEscClick);
+    };
+  }, []);
   return (
     <section className="flex flex-col-reverse gap-10 bg-black/5 px-5 py-10 md:px-10 lg:flex-row lg:gap-20">
       <div className="flex-1">
@@ -14,7 +40,10 @@ export const ContactsAndLocations = () => {
           Locations and contacts
         </p>
 
-        <div className="relative w-full max-w-xs caret-transparent">
+        <div
+          className="relative w-full max-w-xs caret-transparent"
+          ref={dropdownRef}
+        >
           <button
             className="relative w-full cursor-pointer border-b border-black/35 px-1 py-1 text-start outline-none"
             onClick={() => setShowLocations((prev) => !prev)}

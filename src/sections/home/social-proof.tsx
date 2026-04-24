@@ -2,12 +2,6 @@
 
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  FaArrowTrendUp,
-  FaGlobe,
-  FaPeopleGroup,
-  FaShieldHalved,
-} from "react-icons/fa6";
 
 const stats = [
   {
@@ -17,7 +11,6 @@ const stats = [
     label: "Yearly Market Capital",
     description:
       "A business footprint backed by measurable commercial momentum.",
-    Icon: FaArrowTrendUp,
   },
   {
     value: 40,
@@ -25,7 +18,6 @@ const stats = [
     label: "Years Of Experience",
     description:
       "Decades of operating depth across industries, partnerships, and markets.",
-    Icon: FaShieldHalved,
   },
   {
     value: 30,
@@ -33,7 +25,6 @@ const stats = [
     label: "Growth",
     description:
       "A regional presence built to move ideas, products, and relationships farther.",
-    Icon: FaGlobe,
   },
   {
     value: 150,
@@ -41,7 +32,6 @@ const stats = [
     label: "Employees",
     description:
       "People, systems, and execution capacity working at meaningful scale.",
-    Icon: FaPeopleGroup,
   },
 ];
 
