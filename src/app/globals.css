@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "swiper/css";
 @import "swiper/css/navigation";
+@import "swiper/css/thumbs";
+@import "swiper/css/free-mode";
 
 :root {
   --background-primary: #f1efef;
@@ -41,25 +43,13 @@ aside::-webkit-scrollbar {
   width: 0;
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateX(50%) translateY(0);
-  }
-
-  50% {
-    transform: translateX(50%) translateY(-10px);
-  }
+.thumb-swiper .swiper-slide {
+  opacity: 0.5;
+  cursor: pointer;
 }
 
-@keyframes enlarge {
-  0% {
-    transform: scale(0);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+.thumb-swiper .swiper-slide-thumb-active {
+  opacity: 1;
 }
 
 @keyframes marquee {
@@ -72,33 +62,6 @@ aside::-webkit-scrollbar {
   }
 }
 
-@utility animate-float {
-  animation: float 1.8s ease-in-out infinite;
-}
-
 @utility animate-marquee {
   animation: marquee 30s linear infinite;
-}
-
-input[type="range"] {
-  /* removing default appearance */
-  -webkit-appearance: none;
-  appearance: none;
-
-  /* creating a custom design */
-  cursor: pointer;
-  outline: none;
-  /* New additions */
-  height: 2px;
-  background-color: white;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  height: 16px;
-  width: 16px;
-  background-color: var(--accent-primary-light);
-  border-radius: 50%;
-  /* opacity: 0; */
 }

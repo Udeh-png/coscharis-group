@@ -18,13 +18,14 @@ export const FeaturedVehiclesGrid = () => {
 
         <div className="grid gap-6 max-[990px]:grid-cols-2 max-[670px]:grid-cols-1 grid-cols-3">
           {FeaturedCars.filter((_, i) => i < 5).map((car) => (
-            <article
+            <Link
+              href={`/coscharis-motors/${car.name.toLowerCase().replace(/\s+/g, "-")}`}
               key={car.name}
               className="border border-black/10 bg-white p-6 shadow-[0_18px_45px_rgba(15,23,42,0.08)] transition-transform duration-300 hover:-translate-y-1"
             >
               <div className="relative mb-6 h-56 border border-black/8 bg-linear-to-br from-slate-50 to-white p-4">
                 <Image
-                  src={car.imageSrc}
+                  src={car.mainImage}
                   alt={car.name}
                   fill
                   unoptimized
@@ -64,15 +65,12 @@ export const FeaturedVehiclesGrid = () => {
                   </p>
                 </div>
 
-                <Link
-                  href="/"
-                  className="inline-flex items-center gap-2 bg-red-700 px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white transition-transform duration-300 hover:translate-x-1 max-[541px]:w-fit max-[541px]:self-end"
-                >
+                <button className="inline-flex items-center gap-2 bg-red-700 px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white transition-transform duration-300 hover:translate-x-1 max-[541px]:w-fit max-[541px]:self-end">
                   Book Test Drive
                   <HiOutlineArrowLongRight className="text-lg" />
-                </Link>
+                </button>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 

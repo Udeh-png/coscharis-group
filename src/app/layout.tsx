@@ -37,7 +37,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} h-full antialiased`}
     >
       <BodyVisibilityProvider>
-        <body className="min-h-full flex flex-col pt-5">
+        <body className="min-h-full flex flex-col">
           <Navbar />
           {children}
           <Footer />

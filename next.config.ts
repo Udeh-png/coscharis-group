@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
       {
         hostname: "coscharisgroup.net",
       },
+      {
+        hostname: "picsum.photos",
+      },
     ],
   },
 };
