@@ -1,5 +1,7 @@
+import { DetailsCtaContextProvider } from "@/contexts/DetailsCtaContext";
 import { FeaturedCars } from "@/data";
 import { Hero } from "@/sections/motors/details/Hero";
+import { SpecsAndTestDriveForm } from "@/sections/motors/details/Specs&TestDriveForm";
 
 export default async function VehiclePage({
   params,
@@ -11,5 +13,12 @@ export default async function VehiclePage({
   const vehicleDetails = FeaturedCars.find(
     (car) => car.name.toLowerCase() === vehicleNameFormatted,
   );
-  return <Hero vehicleDetails={vehicleDetails || FeaturedCars[0]} />;
+  return (
+    <>
+      <DetailsCtaContextProvider>
+        <Hero vehicleDetails={vehicleDetails || FeaturedCars[0]} />
+        <SpecsAndTestDriveForm vehicle={vehicleDetails || FeaturedCars[0]} />
+      </DetailsCtaContextProvider>
+    </>
+  );
 }

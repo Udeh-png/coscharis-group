@@ -43,12 +43,17 @@ aside::-webkit-scrollbar {
   width: 0;
 }
 
-.thumb-swiper .swiper-slide {
-  opacity: 0.5;
-  cursor: pointer;
+.thumb-swiper .swiper-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(150, 150, 150, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
 }
 
-.thumb-swiper .swiper-slide-thumb-active {
+.thumb-swiper .swiper-slide-thumb-active::after {
   opacity: 1;
 }
 

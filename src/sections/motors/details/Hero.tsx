@@ -3,23 +3,28 @@
 import { Vehicle } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { useContext, useState } from "react";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import Swiper from "swiper";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { Swiper as SwiperComp, SwiperSlide } from "swiper/react";
+import { motion } from "framer-motion";
+import { DetailsCtaShouldShowContext } from "@/contexts/DetailsCtaContext";
 
 export const Hero = ({ vehicleDetails }: { vehicleDetails: Vehicle }) => {
   const [thumbsSwiper, setThumbsSlider] = useState<Swiper | null>(null);
+  const [, SetCtaShouldShow] = useContext(DetailsCtaShouldShowContext);
   return (
-    <div className="h-150 max-[1010px]:h-auto mt-15 mb-10 max-[760px]:mt-10">
-      <div className="grid grid-cols-[2fr_1fr] gap-5 h-full px-10 max-[1230px]:px-5 max-[1010px]:grid-cols-1">
-        <div className="grid grid-rows-[5fr_1fr] gap-y-5 max-[1010px]:h-[50dvh] max-[768px]:h-[40vh] max-[760px]:grid-rows-[3.5fr_1fr] max-[760px]:-mx-4">
-          <div className="relative flex justify-center items-center min-w-0">
+    <motion.div
+      className="mt-15 mb-10"
+      onViewportEnter={() => SetCtaShouldShow(false)}
+      onViewportLeave={() => SetCtaShouldShow(true)}
+    >
+      <div className="grid grid-cols-[1fr_400px] gap-x-5 gap-y-3 px-10 max-[1164px]:px-5 max-[1040px]:grid-cols-1">
+        <div className="min-w-0 max-[760px]:-mx-3">
+          <div className="min-w-0">
             {/* <FaChevronLeft className="absolute left-0 top-1/2 -translate-y-1/2 z-10 text-2xl text-black cursor-pointer leftEl" /> */}
             <SwiperComp
-              className="size-full"
               modules={[Navigation, Thumbs]}
               thumbs={{
                 swiper: thumbsSwiper,
@@ -32,13 +37,13 @@ export const Hero = ({ vehicleDetails }: { vehicleDetails: Vehicle }) => {
             >
               {vehicleDetails.detailShots.map((shot, i) => (
                 <SwiperSlide key={i}>
-                  <div className="relative size-full">
+                  <div className="relative h-full aspect-3/2">
                     <Image
                       src={shot}
                       alt={vehicleDetails.name}
                       fill
                       unoptimized
-                      className="object-contain"
+                      className="object-contain object-bottom"
                     />
                   </div>
                 </SwiperSlide>
@@ -46,41 +51,12 @@ export const Hero = ({ vehicleDetails }: { vehicleDetails: Vehicle }) => {
             </SwiperComp>
             {/* <FaChevronRight className="absolute right-0 top-1/2 -translate-y-1/2 z-10 text-2xl text-black cursor-pointer rightEl" /> */}
           </div>
-          <div className="relative h-full min-w-0">
-            <SwiperComp
-              onSwiper={(swiper) => setThumbsSlider(swiper)}
-              className="size-full thumb-swiper"
-              modules={[Navigation, Thumbs, FreeMode]}
-              cssMode={true}
-              freeMode={{
-                enabled: true,
-              }}
-              watchSlidesProgress={true}
-              breakpoints={{
-                768: {
-                  slidesPerView: 5,
-                  spaceBetween: 12,
-                },
-              }}
-              slidesPerView={4.2}
-              slidesPerGroup={1}
-              spaceBetween={8}
-            >
-              {vehicleDetails.detailShots?.map((shot, i) => {
-                return (
-                  <SwiperSlide key={i} className="">
-                    <Image src={shot} alt="" fill className="object-cover" />
-                  </SwiperSlide>
-                );
-              })}
-            </SwiperComp>
-          </div>
         </div>
-        <div className="flex flex-col min-w-0">
+        <div className="flex flex-col max-[1040px]:order-3">
           <p className="text-sm text-black/45 tracking-[0.35em] uppercase font-bold mb-5">
             Land Rover
           </p>
-          <h1 className="text-5xl line-clamp-3 leading-none font-black text-black mb-4 max-[768px]:text-3xl max-[760px]:mb-2">
+          <h1 className="text-[2.7rem] line-clamp-3 leading-none font-black text-black mb-4 max-[768px]:text-3xl max-[1220px]:text-4xl max-[760px]:mb-2">
             Land Rover Defender 130 X-Dynamic
           </h1>
 
@@ -111,7 +87,7 @@ export const Hero = ({ vehicleDetails }: { vehicleDetails: Vehicle }) => {
           <div className="flex items-center gap-3 text-black/85 mb-3">
             <p>Official dealership warranty included.</p>
           </div>
-          <div className="flex gap-2 items-center max-[1120px]:flex-col max-[1120px]:items-stretch max-[1010px]:flex-row max-[361px]:flex-col">
+          <div className="flex gap-2 items-center max-[760px]:flex-col max-[760px]:items-stretch">
             <Link
               href={"/"}
               className="inline-flex items-center gap-2 bg-red-700 px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white transition-transform duration-300 hover:translate-x-1 justify-center"
@@ -129,8 +105,38 @@ export const Hero = ({ vehicleDetails }: { vehicleDetails: Vehicle }) => {
             </Link>
           </div>
         </div>
+        <div className="relative min-w-0 max-[1040px]:order-2 max-[760px]:-mx-3">
+          <SwiperComp
+            onSwiper={(swiper) => setThumbsSlider(swiper)}
+            className="thumb-swiper"
+            modules={[Navigation, Thumbs, FreeMode]}
+            cssMode={true}
+            freeMode={{
+              enabled: true,
+            }}
+            watchSlidesProgress={true}
+            breakpoints={{
+              760: {
+                slidesPerView: 6,
+                slidesPerGroup: 1,
+                spaceBetween: 5,
+              },
+            }}
+            slidesPerView={4.3}
+            slidesPerGroup={1}
+            spaceBetween={3}
+          >
+            {vehicleDetails.detailShots?.map((shot, i) => {
+              return (
+                <SwiperSlide key={i} className="aspect-3/2">
+                  <Image src={shot} alt="" fill className="object-contain" />
+                </SwiperSlide>
+              );
+            })}
+          </SwiperComp>
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 // thumb swiper breakpoint: 1100px

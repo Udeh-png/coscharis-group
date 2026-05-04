@@ -7,7 +7,7 @@ import { FaChevronDown } from "react-icons/fa6";
 
 export const Navbar = () => {
   return (
-    <nav className="fixed z-10 inset-x-0 flex justify-between items-center gap-10 px-10 max-[541px]:px-5 text-background-primary">
+    <nav className="fixed z-10 inset-x-0 flex justify-between items-center gap-10 px-10 max-[541px]:px-5 text-background-primary py-2.5">
       <Link
         href="/"
         className="relative w-20 h-10 max-[460px]:w-16 max-[460px]:h-8"

@@ -5,4 +5,6 @@ export type Vehicle = {
   keySpecs: string[];
   startingPrice: number;
   detailShots: string[];
+  performanceSpecs?: object;
+  dimensions?: object;
 };
