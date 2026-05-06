@@ -62,7 +62,7 @@ export const FeaturedCars: Vehicle[] = [
   },
   {
     name: "2024 BMW X5",
-    mainImage: "https://www.pngarts.com/files/4/BMW-PNG-Download-Image.png",
+    mainImage: "https://picsum.photos/id/61/818/540",
     category: "Premium SUV",
     keySpecs: ["automatic", "5 seats", "335hp"],
     startingPrice: 42000000,
