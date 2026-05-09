@@ -22,7 +22,7 @@ export const Hero = () => {
     SiMini,
   ];
   return (
-    <div className="h-[90dvh] relative -mt-10 text-white">
+    <div className="h-dvh relative -mt-15 text-white">
       <div className="absolute inset-0">
         <Image
           src="https://coscharisgroup.net/wp-content/themes/coscharis1/images/2.jpg"
@@ -35,7 +35,7 @@ export const Hero = () => {
       </div>
       <div className="absolute inset-0 bg-linear-to-r bg-black/20" />
       <div className="size-full flex flex-col gap-y-15 justify-center max-[750px]:items-start items-center relative max-[750px]:px-5">
-        <div className="max-w-2xl text-center max-[750px]:text-start">
+        <div className="max-w-2xl text-center max-[750px]:text-start max-[750px]:pr-5">
           <p className="text-xs uppercase tracking-[0.35em] text-white/75 font-bold mb-2">
             value for money
           </p>
@@ -65,11 +65,11 @@ export const Hero = () => {
           </div>
         </div>
 
-        <aside className="absolute bottom-7 max-w-dvw max-[750px]:bottom-5 left-1/2 -translate-x-1/2 flex gap-23 max-[750px]:gap-13 text-6xl max-[950px]:text-5xl text-white/80 max-[950px]:overflow-auto max-[950px]:px-5">
+        <aside className="absolute bottom-7 max-w-dvw max-[750px]:bottom-5 left-1/2 -translate-x-1/2 flex gap-23 max-[950px]:gap-13 text-6xl max-[1024px]:text-5xl text-white/80 max-[950px]:overflow-auto max-[950px]:px-5">
           {carIcons.map((Icon) => {
             return (
               <Link href={"/"} key={Icon.name}>
-                <Icon stopColor="red" />
+                <Icon />
               </Link>
             );
           })}
