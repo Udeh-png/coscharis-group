@@ -3,9 +3,6 @@
 import { VehicleCard } from "@/components/VehicleCard";
 import { Vehicle } from "@/types";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Link from "next/link";
-import Image from "next/image";
-import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
 export const SimilarCars = ({ vehicles }: { vehicles: Vehicle[] }) => {
   return (
