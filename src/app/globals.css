@@ -43,6 +43,12 @@ aside::-webkit-scrollbar {
   width: 0;
 }
 
+.swiper-over-one_per_view {
+  opacity: 0;
+  height: 100px;
+  transition: opacity 0.3ms;
+}
+
 .thumb-swiper .swiper-slide::after {
   content: "";
   position: absolute;

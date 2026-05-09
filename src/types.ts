@@ -7,4 +7,5 @@ export type Vehicle = {
   detailShots: string[];
   performanceSpecs?: object;
   dimensions?: object;
+  justArrived: boolean;
 };

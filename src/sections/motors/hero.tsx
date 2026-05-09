@@ -65,7 +65,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-7 max-w-dvw max-[750px]:bottom-5 left-1/2 -translate-x-1/2 flex gap-23 max-[750px]:gap-13 text-6xl max-[950px]:text-5xl text-white/80 max-[950px]:overflow-auto max-[950px]:px-5">
+        <aside className="absolute bottom-7 max-w-dvw max-[750px]:bottom-5 left-1/2 -translate-x-1/2 flex gap-23 max-[750px]:gap-13 text-6xl max-[950px]:text-5xl text-white/80 max-[950px]:overflow-auto max-[950px]:px-5">
           {carIcons.map((Icon) => {
             return (
               <Link href={"/"} key={Icon.name}>
@@ -73,7 +73,7 @@ export const Hero = () => {
               </Link>
             );
           })}
-        </div>
+        </aside>
       </div>
     </div>
   );

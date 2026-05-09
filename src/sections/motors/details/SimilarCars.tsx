@@ -3,6 +3,9 @@
 import { VehicleCard } from "@/components/VehicleCard";
 import { Vehicle } from "@/types";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Link from "next/link";
+import Image from "next/image";
+import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
 export const SimilarCars = ({ vehicles }: { vehicles: Vehicle[] }) => {
   return (
@@ -14,6 +17,10 @@ export const SimilarCars = ({ vehicles }: { vehicles: Vehicle[] }) => {
         Discover Similar Cars From Our Collection
       </h3>
       <Swiper
+        onSwiper={(swiper) => {
+          swiper.el.style.opacity = "1";
+          swiper.el.style.height = "auto";
+        }}
         slidesPerView={1}
         spaceBetween={12}
         slidesOffsetBefore={12}
@@ -36,7 +43,7 @@ export const SimilarCars = ({ vehicles }: { vehicles: Vehicle[] }) => {
             slidesOffsetAfter: 24,
           },
         }}
-        className="-mx-10! max-[541px]:-mx-3!"
+        className="-mx-10! max-[541px]:-mx-3! swiper-over-one_per_view"
       >
         {vehicles.map((vehicle, i) => {
           return (

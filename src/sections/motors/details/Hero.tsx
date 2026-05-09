@@ -10,20 +10,23 @@ import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { Swiper as SwiperComp, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import { DetailsCtaShouldShowContext } from "@/contexts/DetailsCtaContext";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 export const Hero = ({ vehicleDetails }: { vehicleDetails: Vehicle }) => {
   const [thumbsSwiper, setThumbsSlider] = useState<Swiper | null>(null);
   const [, SetCtaShouldShow] = useContext(DetailsCtaShouldShowContext);
   return (
     <motion.div
-      className="mt-15 mb-10"
+      className="mt-3 mb-10"
       onViewportEnter={() => SetCtaShouldShow(false)}
       onViewportLeave={() => SetCtaShouldShow(true)}
     >
       <div className="grid grid-cols-[1fr_400px] gap-x-5 gap-y-3 px-10 max-[1164px]:px-5 max-[1040px]:grid-cols-1">
         <div className="min-w-0 max-[760px]:-mx-3">
-          <div className="min-w-0">
-            {/* <FaChevronLeft className="absolute left-0 top-1/2 -translate-y-1/2 z-10 text-2xl text-black cursor-pointer leftEl" /> */}
+          <div className="min-w-0 relative">
+            <div className="absolute left-5 top-1/2 -translate-y-1/2 z-10 text-2xl text-white bg-black/45 hover:bg-red-700/75 transition-colors p-2 cursor-pointer leftEl md:inline-block hidden">
+              <FaChevronLeft />
+            </div>
             <SwiperComp
               modules={[Navigation, Thumbs]}
               thumbs={{
@@ -49,7 +52,9 @@ export const Hero = ({ vehicleDetails }: { vehicleDetails: Vehicle }) => {
                 </SwiperSlide>
               ))}
             </SwiperComp>
-            {/* <FaChevronRight className="absolute right-0 top-1/2 -translate-y-1/2 z-10 text-2xl text-black cursor-pointer rightEl" /> */}
+            <div className="absolute right-5 top-1/2 -translate-y-1/2 z-10 text-2xl text-white bg-black/45 hover:bg-red-700/75 transition-colors p-2 cursor-pointer rightEl md:inline-block hidden">
+              <FaChevronRight />
+            </div>
           </div>
         </div>
         <div className="flex flex-col max-[1040px]:order-3">
@@ -107,8 +112,12 @@ export const Hero = ({ vehicleDetails }: { vehicleDetails: Vehicle }) => {
         </div>
         <div className="relative min-w-0 max-[1040px]:order-2 max-[760px]:-mx-3">
           <SwiperComp
-            onSwiper={(swiper) => setThumbsSlider(swiper)}
-            className="thumb-swiper"
+            onSwiper={(swiper) => {
+              setThumbsSlider(swiper);
+              swiper.el.style.opacity = "1";
+              swiper.el.style.maxHeight = "auto";
+            }}
+            className="thumb-swiper swiper-over-one_per_view"
             modules={[Navigation, Thumbs, FreeMode]}
             cssMode={true}
             freeMode={{
