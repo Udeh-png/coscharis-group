@@ -70,11 +70,11 @@ export const Navbar = () => {
                       {companyLinks.map((link) => (
                         <li key={link.label}>
                           <Link
-                            className="group/link flex items-center justify-between border-b border-black/8 px-3 py-3 text-xs font-extrabold tracking-[0.18em] transition-colors last:border-b-0 hover:bg-black hover:text-white will-change-[color]"
+                            className="group/link flex items-center justify-between border-b border-black/8 px-3 py-3 text-xs font-extrabold tracking-[0.18em] last:border-b-0 hover:bg-black focus:bg-black hover:text-white focus:text-white will-change-[color]"
                             href={link.href}
                           >
                             <span>{link.label}</span>
-                            <HiOutlineArrowLongRight className="translate-x-0 text-base opacity-0 transition-all group-hover/link:translate-x-1 group-hover/link:opacity-100" />
+                            <HiOutlineArrowLongRight className="text-base opacity-0 transition-all group-hover/link:opacity-100 group-focus/link:opacity-100" />
                           </Link>
                         </li>
                       ))}

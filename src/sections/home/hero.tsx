@@ -5,7 +5,6 @@ import { useContext, useRef, useState } from "react";
 import { BodyVisibilityContext } from "@/contexts/BodyVisibility";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaCirclePlay } from "react-icons/fa6";
 
 const featuredDivisions = [
   {
@@ -118,10 +117,10 @@ export default function Hero() {
 
               <Link
                 href="/contact-us"
-                className="inline-flex items-center gap-2 border border-white/20 bg-white/8 px-6 py-3 text-xs uppercase tracking-widest font-semibold text-white/88 backdrop-blur-md transition-colors duration-300 hover:bg-white/12"
+                className="inline-flex items-center gap-2 border border-white/50 px-6 py-3 text-xs uppercase tracking-widest font-semibold text-white/88 transition-colors duration-300"
               >
-                <FaCirclePlay className="text-base" />
                 Start A Conversation
+                <HiOutlineArrowLongRight className="text-lg" />
               </Link>
             </motion.div>
           </div>
