@@ -14,6 +14,8 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 export const Hero = ({ vehicleDetails }: { vehicleDetails: Vehicle }) => {
   const [thumbsSwiper, setThumbsSlider] = useState<Swiper | null>(null);
+  const [reachedEnd, setReachedEnd] = useState(false);
+  const [reachedBeginning, setReachedBeginning] = useState(true);
   const [, SetCtaShouldShow] = useContext(DetailsCtaShouldShowContext);
   return (
     <motion.div
@@ -24,7 +26,9 @@ export const Hero = ({ vehicleDetails }: { vehicleDetails: Vehicle }) => {
       <div className="grid grid-cols-[1fr_400px] gap-x-5 gap-y-3 px-10 max-[1164px]:px-5 max-[1040px]:grid-cols-1">
         <div className="min-w-0 max-[760px]:-mx-3">
           <div className="min-w-0 relative">
-            <div className="absolute left-5 top-1/2 -translate-y-1/2 z-10 text-2xl text-white bg-black/45 hover:bg-red-700/75 transition-colors p-2 cursor-pointer leftEl md:inline-block hidden">
+            <div
+              className={`absolute left-5 top-1/2 -translate-y-1/2 z-10 text-2xl text-white bg-black/45 hover:bg-red-700/75 transition-colors p-2 cursor-pointer leftEl md:inline-block hidden ${reachedBeginning ? "opacity-0 pointer-events-none" : ""}`}
+            >
               <FaChevronLeft />
             </div>
             <SwiperComp
@@ -37,6 +41,18 @@ export const Hero = ({ vehicleDetails }: { vehicleDetails: Vehicle }) => {
                 prevEl: ".leftEl",
               }}
               pagination={{ clickable: true }}
+              onSlideChange={(e) => {
+                if (e.isEnd) {
+                  setReachedEnd(true);
+                  return;
+                }
+                if (e.isBeginning) {
+                  setReachedBeginning(true);
+                  return;
+                }
+                setReachedBeginning(false);
+                setReachedEnd(false);
+              }}
             >
               {vehicleDetails.detailShots.map((shot, i) => (
                 <SwiperSlide key={i}>
@@ -54,7 +70,9 @@ export const Hero = ({ vehicleDetails }: { vehicleDetails: Vehicle }) => {
                 </SwiperSlide>
               ))}
             </SwiperComp>
-            <div className="absolute right-5 top-1/2 -translate-y-1/2 z-10 text-2xl text-white bg-black/45 hover:bg-red-700/75 transition-colors p-2 cursor-pointer rightEl md:inline-block hidden">
+            <div
+              className={`absolute right-5 top-1/2 -translate-y-1/2 z-10 text-2xl text-white bg-black/45 hover:bg-red-700/75 transition-colors p-2 cursor-pointer rightEl md:inline-block hidden ${reachedEnd ? "opacity-0 pointer-events-none" : ""}`}
+            >
               <FaChevronRight />
             </div>
           </div>

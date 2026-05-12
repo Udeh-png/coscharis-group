@@ -6,7 +6,7 @@ export type Vehicle = {
   startingPrice: number;
   detailShots: string[];
   performanceSpecs?: object;
-  dimensions?: object;
+  dimensions: object;
   justArrived: boolean;
 };
 
