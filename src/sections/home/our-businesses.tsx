@@ -89,7 +89,7 @@ export const OurBusinesses = () => {
                   y: -30,
                 }}
                 transition={{ duration: 0.25, type: "tween" }}
-                className={`relative overflow-hidden h-full rounded-4xl p-8 text-white shadow-[0_30px_80px_rgba(0,0,0,0.18)] max-[541px]:rounded-3xl max-[541px]:p-5 bg-black/40 backdrop-blur-sm`}
+                className={`relative overflow-hidden h-full rounded-4xl p-8 text-white shadow-[0_30px_80px_rgba(0,0,0,0.18)] max-[541px]:rounded-3xl max-[541px]:p-5 bg-black/40`}
               >
                 <div className="relative">
                   <div className="flex items-start justify-between gap-6 max-[541px]:flex-col">

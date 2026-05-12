@@ -76,9 +76,6 @@ export default function Hero() {
       </video>
 
       <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(4,10,18,0.82)_10%,rgba(4,10,18,0.45)_48%,rgba(4,10,18,0.9)_100%)]" />
-      <div className="absolute inset-y-0 left-0 w-1/2 bg-linear-to-r from-black/35 to-transparent" />
-      <div className="absolute -right-32 top-24 h-72 w-72 rounded-full bg-accent-primary/30 blur-3xl" />
-      <div className="absolute -bottom-28 left-1/3 h-64 w-64 rounded-full bg-accent-secondary/25 blur-3xl" />
 
       <div className="absolute inset-x-0 top-0 mx-auto flex min-h-dvh max-w-400 items-center px-10 pb-14 pt-28 max-[955px]:items-end max-[955px]:pb-10 max-[541px]:px-5 max-[541px]:pt-24">
         <div className="grid w-full gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
