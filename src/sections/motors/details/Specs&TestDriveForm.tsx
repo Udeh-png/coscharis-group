@@ -65,7 +65,7 @@ export const SpecsAndTestDriveForm = ({ vehicle }: { vehicle: Vehicle }) => {
   const { performanceSpecs, dimensions } = vehicle;
   const [ctaShouldShow] = useContext(DetailsCtaShouldShowContext);
   return (
-    <div className="px-10 max-[760px]:px-5 grid grid-cols-[1.5fr_1fr] max-[760px]:grid-cols-1 gap-10 mb-15">
+    <div className="px-10 max-[760px]:px-5 grid grid-cols-[1.5fr_1fr] max-[760px]:grid-cols-1 gap-10 mb-15 max-[760px]:mb-7">
       <div className="space-y-20 max-[760px]:space-y-10">
         <div>
           <p className="text-sm text-black/45 tracking-[0.35em] uppercase font-bold mb-5 max-[760px]:mb-3">

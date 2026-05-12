@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useContext, useRef, useState } from "react";
-import { BodyVisibilityContext } from "@/contexts/BodyVisibility";
+import { useRef, useState } from "react";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -43,7 +42,6 @@ const featuredDivisions = [
 ];
 
 export default function Hero() {
-  const [bodyIsVisible] = useContext(BodyVisibilityContext);
   const videoElemRef = useRef<HTMLVideoElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -126,18 +124,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      <AnimatePresence>
-        {!bodyIsVisible && (
-          <motion.div
-            exit={{ opacity: 0 }}
-            className="absolute bottom-5 left-1/2 flex -translate-x-1/2 flex-col items-center text-xs text-white/45"
-          >
-            <p className="uppercase tracking-[0.28em]">Scroll Down</p>
-            <div className="mt-3 h-10 w-0.5 bg-linear-to-b from-transparent to-accent-primary" />
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }

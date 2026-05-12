@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
 export const ContactUs = () => {
@@ -22,13 +21,13 @@ export const ContactUs = () => {
         </div>
 
         <div className="self-center max-[541px]:justify-self-start justify-self-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-3 bg-red-700 px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-white transition-all duration-300 hover:translate-x-1"
+          <button
+            type="button"
+            className="mt-8 inline-flex items-center gap-2 bg-red-700 px-5 py-3 text-xs uppercase tracking-widest font-semibold text-white transition-transform duration-300 hover:translate-x-1"
           >
             Go To Contact Page
             <HiOutlineArrowLongRight className="text-lg" />
-          </Link>
+          </button>
         </div>
       </div>
     </section>

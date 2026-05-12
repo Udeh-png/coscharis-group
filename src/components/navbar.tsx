@@ -28,6 +28,8 @@ const navLinks = [
 
 export const Navbar = () => {
   const [isOverlaid, setIsOverlaid] = useState(false);
+  const [mobileMenuChecked, setMobileMenuChecked] = useState(false);
+  const [mobileCompaniesChecked, setMobileCompaniesChecked] = useState(false);
 
   return (
     <>
@@ -48,6 +50,7 @@ export const Navbar = () => {
           href="/"
           className="relative h-10 w-20 max-[460px]:h-8 max-[460px]:w-16"
           aria-label="Coscharis Group home"
+          onClick={() => setMobileMenuChecked(false)}
         >
           <Image src="/images/logo.png" alt="" fill sizes="80px" />
         </Link>
@@ -107,27 +110,19 @@ export const Navbar = () => {
           </li>
         </ul>
 
-        <label
-          htmlFor="mobile-menu-checkbox"
-          className="hidden cursor-pointer text-3xl max-[955px]:block"
+        <button
+          className={`hidden cursor-pointer text-3xl max-[955px]:block`}
           aria-label="Open mobile menu"
+          onClick={() => setMobileMenuChecked(true)}
         >
           <CgMenuLeft />
-        </label>
+        </button>
 
-        <input
-          type="checkbox"
-          id="mobile-menu-checkbox"
-          className="peer"
-          hidden
-        />
-        <label
-          htmlFor="mobile-menu-checkbox"
-          className="pointer-events-none fixed inset-0 bg-black opacity-0 transition-opacity duration-500 peer-checked:pointer-events-auto peer-checked:opacity-45"
-          aria-label="Close mobile menu overlay"
-        />
-
-        <div className="fixed top-0 right-0 w-full max-h-dvh translate-x-full overflow-y-auto bg-background-primary text-black transition-transform duration-500 peer-checked:translate-x-0 min-[620px]:w-lg border border-red-500">
+        <div
+          className={`fixed top-0 right-0 w-full max-h-dvh overflow-y-auto bg-background-primary text-black transition-transform duration-500 min-[620px]:w-lg ${
+            mobileMenuChecked ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
           <div className="relative min-h-dvh overflow-hidden p-5">
             <div className="absolute -right-24 top-24 h-56 w-56 rounded-full bg-accent-primary/15 blur-3xl" />
             <div className="absolute -bottom-20 left-0 h-56 w-56 rounded-full bg-accent-secondary/10 blur-3xl" />
@@ -141,13 +136,13 @@ export const Navbar = () => {
                 <Image src="/images/logo.png" alt="" fill sizes="80px" />
               </Link>
 
-              <label
-                htmlFor="mobile-menu-checkbox"
+              <button
                 className="cursor-pointer border border-black/15 p-2 text-2xl"
                 aria-label="Close mobile menu"
+                onClick={() => setMobileMenuChecked(false)}
               >
                 <CgClose />
-              </label>
+              </button>
             </div>
 
             <div className="relative pt-10" id="">
@@ -161,42 +156,45 @@ export const Navbar = () => {
                     <Link
                       href={link.href}
                       className={`flex items-center justify-between py-5 transition-all hover:text-red-700 nav`}
+                      onClick={() => setMobileMenuChecked(false)}
                     >
                       <span>{link.label}</span>
                     </Link>
                   </li>
                 ))}
 
-                <div className="">
-                  <input
-                    type="checkbox"
-                    className="peer"
-                    id="mobile-companies-dropdown"
-                    hidden
-                  />
-                  <label
-                    htmlFor="mobile-companies-dropdown"
+                <li className="">
+                  <button
                     className="flex w-full items-center z-10 justify-between border-b border-black/10 transition-colors hover:text-red-700 outline-none"
+                    onClick={() =>
+                      setMobileCompaniesChecked(!mobileCompaniesChecked)
+                    }
                   >
                     <span className="flex items-center justify-between py-5">
                       Companies
                     </span>
                     <FaChevronDown className="text-lg peer-checked:rotate-180" />
-                  </label>
+                  </button>
 
-                  <ul className="text-2xl px-5 overflow-clip peer-checked:h-135 h-0 transition-[height]">
+                  <ul
+                    className={`text-2xl px-5 overflow-clip transition-[height] ${mobileCompaniesChecked ? "h-135" : "h-0"}`}
+                  >
                     {companyLinks.map((link) => (
                       <li key={link.label}>
                         <Link
                           href={link.href}
                           className="border-b border-black/10 block py-4 text-black/92 font-bold"
+                          onClick={() => {
+                            setMobileCompaniesChecked(false);
+                            setMobileMenuChecked(false);
+                          }}
                         >
                           {link.label}
                         </Link>
                       </li>
                     ))}
                   </ul>
-                </div>
+                </li>
               </ul>
 
               <Link

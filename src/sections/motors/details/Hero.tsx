@@ -135,7 +135,7 @@ export const Hero = ({ vehicleDetails }: { vehicleDetails: Vehicle }) => {
             onSwiper={(swiper) => {
               setThumbsSlider(swiper);
               swiper.el.style.opacity = "1";
-              swiper.el.style.maxHeight = "auto";
+              swiper.el.style.height = "auto";
             }}
             className="thumb-swiper swiper-over-one_per_view"
             modules={[Navigation, Thumbs, FreeMode]}

@@ -45,22 +45,16 @@ aside::-webkit-scrollbar {
 
 .swiper-over-one_per_view {
   opacity: 0;
-  height: 100px;
+  height: 0;
   transition: opacity 0.3ms;
 }
 
-.thumb-swiper .swiper-slide::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(150, 150, 150, 0.8);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s;
+.thumb-swiper .swiper-slide {
+  border: none;
 }
 
-.thumb-swiper .swiper-slide-thumb-active::after {
-  opacity: 1;
+.thumb-swiper .swiper-slide-thumb-active {
+  @apply border border-red-700;
 }
 
 @keyframes marquee {
