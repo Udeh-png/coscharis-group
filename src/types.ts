@@ -9,3 +9,12 @@ export type Vehicle = {
   dimensions?: object;
   justArrived: boolean;
 };
+
+export type FeaturedNews = {
+  title: string;
+  excerpt: string;
+  category: string;
+  imageSrc: string;
+  imageAlt: string;
+  href: string;
+};

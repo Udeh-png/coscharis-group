@@ -18,7 +18,7 @@ export const FeaturedVehiclesGrid = () => {
 
         <div className="grid gap-6 max-[990px]:grid-cols-2 max-[670px]:grid-cols-1 grid-cols-3">
           {FeaturedCars.filter((_, i) => i < 5).map((car, i) => (
-            <VehicleCard vehicle={car} key={i} />
+            <VehicleCard vehicle={car} key={i} priority={i < 3} />
           ))}
         </div>
 

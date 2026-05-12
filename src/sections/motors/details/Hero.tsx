@@ -45,7 +45,9 @@ export const Hero = ({ vehicleDetails }: { vehicleDetails: Vehicle }) => {
                       src={shot}
                       alt={vehicleDetails.name}
                       fill
-                      unoptimized
+                      sizes="(max-width: 760px) 100vw, (max-width: 1040px) calc(100vw - 40px), calc(100vw - 480px)"
+                      quality={80}
+                      priority={i === 0}
                       className="object-contain object-bottom"
                     />
                   </div>
@@ -137,8 +139,15 @@ export const Hero = ({ vehicleDetails }: { vehicleDetails: Vehicle }) => {
           >
             {vehicleDetails.detailShots?.map((shot, i) => {
               return (
-                <SwiperSlide key={i} className="aspect-3/2">
-                  <Image src={shot} alt="" fill className="object-contain" />
+                <SwiperSlide key={i} className="relative aspect-3/2">
+                  <Image
+                    src={shot}
+                    alt=""
+                    fill
+                    sizes="(max-width: 760px) 23vw, 66px"
+                    quality={60}
+                    className="object-contain"
+                  />
                 </SwiperSlide>
               );
             })}

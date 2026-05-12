@@ -3,7 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
-export const VehicleCard = ({ vehicle }: { vehicle: Vehicle }) => {
+type VehicleCardProps = {
+  vehicle: Vehicle;
+  priority?: boolean;
+};
+
+export const VehicleCard = ({ vehicle, priority = false }: VehicleCardProps) => {
   const displaySpecs = vehicle.keySpecs.slice(0, 5);
   const formattedPrice = new Intl.NumberFormat("en-NG", {
     style: "currency",
@@ -27,7 +32,9 @@ export const VehicleCard = ({ vehicle }: { vehicle: Vehicle }) => {
           src={vehicle.mainImage}
           alt={vehicle.name}
           fill
-          unoptimized
+          sizes="(max-width: 670px) calc(100vw - 40px), (max-width: 990px) calc((100vw - 64px) / 2), calc((100vw - 128px) / 3)"
+          quality={75}
+          priority={priority}
           className="object-contain"
         />
       </div>

@@ -17,7 +17,7 @@ import {
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import { MdEmail } from "react-icons/md";
 import z from "zod";
-import { Businesses } from "@/data";
+import { BusinessesSectors } from "@/data";
 
 const newsLetterSignupSchema = z.object({
   emailField: z.email(),
@@ -32,7 +32,7 @@ export const Footer = () => {
       resolver: zodResolver(newsLetterSignupSchema),
     });
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const businessOptions = ["All", ...Businesses, "Non-Specific"];
+  const businessOptions = ["All", ...BusinessesSectors, "Non-Specific"];
 
   const submitForm: SubmitHandler<NewsLetterSignupType> = (data) => {
     console.log(data);

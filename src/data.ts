@@ -1,6 +1,6 @@
-import { Vehicle } from "./types";
+import { FeaturedNews, Vehicle } from "./types";
 
-export const Businesses = [
+export const BusinessesSectors = [
   "Motors",
   "Technologies",
   "Mobility",
@@ -111,13 +111,164 @@ export const FeaturedCars: Vehicle[] = [
   },
   {
     name: "2023 Jaguar F-Pace",
-    mainImage:
-      "https://e7.pngegg.com/pngimages/559/561/png-clipart-jaguar-cars-jaguar-cars-2017-jaguar-f-pace-jaguar-f-type-jaguar-compact-car-animals.png",
+    mainImage: "https://www.pngarts.com/files/4/BMW-PNG-Image-Background.png",
     category: "Performance Crossover",
     keySpecs: ["AWD", "5 seats", "296hp", "sedan", "4.2L"],
     startingPrice: 38000000,
     detailShots: [],
     justArrived: false,
+  },
+];
+
+export const Businesses = [
+  {
+    id: "motors",
+    name: "Motors",
+    kicker: "Flagship Distribution",
+    description:
+      "A high-visibility automotive business built around premium vehicle brands, nationwide reach, and dependable aftersales support that keeps customers moving.",
+    eyebrow: "01",
+    imageSrc: "https://picsum.photos/id/177/1920/1080",
+    stat: "Nationwide",
+    statLabel: "Sales and service footprint",
+    highlights: [
+      "Vehicle sales, financing support, and fleet relationships",
+      "Aftersales, parts distribution, and workshop excellence",
+      "A brand experience designed to feel premium at every touchpoint",
+    ],
+  },
+  {
+    id: "technologies",
+    name: "Technologies",
+    kicker: "Enterprise Solutions",
+    description:
+      "Technology operations focused on infrastructure, devices, and business systems that help modern organizations run smarter, faster, and more reliably.",
+    eyebrow: "02",
+    imageSrc: "https://picsum.photos/id/2/1920/1080",
+    stat: "Connected",
+    statLabel: "Digital systems for modern operations",
+    highlights: [
+      "Enterprise hardware, deployment, and support services",
+      "Solutions built for resilience, security, and continuity",
+      "Technology partnerships that turn complexity into confidence",
+    ],
+  },
+  {
+    id: "mobility",
+    name: "Mobility",
+    kicker: "Movement At Scale",
+    description:
+      "Integrated mobility solutions designed to improve how people, fleets, and goods move through busy markets with speed, reliability, and care.",
+    eyebrow: "03",
+    imageSrc: "https://picsum.photos/id/55/1920/1080",
+    stat: "Always On",
+    statLabel: "Transport solutions with operational depth",
+    highlights: [
+      "Fleet-driven thinking for demanding commercial needs",
+      "Customer-first mobility experiences across touchpoints",
+      "Systems that prioritize uptime, service quality, and trust",
+    ],
+  },
+  {
+    id: "beverages",
+    name: "Beverages",
+    kicker: "Consumer Reach",
+    description:
+      "A consumer-facing business with room for storytelling, shelf presence, and brand-building across retail channels and high-frequency purchase moments.",
+    eyebrow: "04",
+    imageSrc: "https://picsum.photos/id/98/1920/1080",
+    stat: "Everyday",
+    statLabel: "Brands built for visibility and repeat demand",
+    highlights: [
+      "Retail distribution with strong market-facing energy",
+      "Products positioned for memorability and repeat purchase",
+      "Execution that balances reach, consistency, and freshness",
+    ],
+  },
+  {
+    id: "medicine-foods",
+    name: "Medicine & Foods",
+    kicker: "Essential Supply",
+    description:
+      "Critical product categories delivered with care, consistency, and strong operational discipline across health and nutrition needs.",
+    eyebrow: "05",
+    imageSrc: "https://picsum.photos/id/18/1920/1080",
+    stat: "Trusted",
+    statLabel: "Essential categories handled responsibly",
+    highlights: [
+      "Operations built for compliance, reliability, and care",
+      "Supply chains that support product confidence",
+      "A practical business with meaningful everyday impact",
+    ],
+  },
+  {
+    id: "farms",
+    name: "Farms",
+    kicker: "Agricultural Value",
+    description:
+      "Agricultural investments and production activities shaped around long-term sustainability, food systems, and dependable execution in the field.",
+    eyebrow: "06",
+    imageSrc: "https://picsum.photos/id/10/1920/1080",
+    stat: "Grounded",
+    statLabel: "Long-horizon thinking backed by real operations",
+    highlights: [
+      "Production-led execution with durable market relevance",
+      "A long-term play in value creation and resilience",
+      "Sustainability and stewardship built into the business story",
+    ],
+  },
+];
+
+export const FeaturedNewsFeeds: FeaturedNews[] = [
+  {
+    title:
+      "Coscharis Motors Plc unveils the new Renault Taliant at Abuja international motor fair",
+    excerpt:
+      "Coscharis Motors Plc., a leading automobile dealer and the exclusive representative of Renault brand in Nigeria, has once again demonstrated its industry leadership by unveiling the all-new Renault Taliant at the recently concluded Abuja International Motor Fair.",
+    category: "development",
+    imageSrc: "/images/headline-img.jpg",
+    imageAlt: "Renault Taliant unveiling at Abuja international motor fair",
+    href: "",
+  },
+  {
+    title: "Coscharis Group promises value for money",
+    excerpt:
+      "Rising from a two day strategy retreat session, members of Board of Directors of all the Companies within the Coscharis Group have resolved to further deliver value for money to their numerous customers in all ramifications of their customer engagement.",
+    category: "empowerment",
+    imageSrc: "/images/news1-image.jpg",
+    imageAlt: "Coscharis Group board strategy retreat",
+    href: "",
+  },
+  {
+    title: "Geely Global relaunches in Nigeria with Coscharis Motors plc",
+    excerpt:
+      "Geely Auto International Corporation has named Coscharis Motors as its official retail partner in Nigeria. Consequently, Coscharis Motors becomes the exclusive franchise representative of Geely Global in Nigeria and sets to officially launch the latest Geely models into the Nigerian market very soon.",
+    category: "empowerment",
+    imageSrc: "/images/news2-image.jpg",
+    imageAlt: "Geely Global relaunch with Coscharis Motors",
+    href: "",
+  },
+  {
+    title:
+      "Coscharis Technologies Limited announces $4 billion green power project in Nigeria",
+    excerpt:
+      "Coscharis Technologies Limited a subsidiary of the Coscharis Group and a leading player in the Information Communication and Technology sector in Nigeria and the Sub-Saharan Africa is an authorized distributor of a wide number of globally respected IT brands delivering reliable hardware and service solutions.",
+    category: "empowerment",
+    imageSrc:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuARBG8RngJ4SfecfW4OzC9n4EDjRiJHnfIBMh4bAj8L3pMrX3WXU8IN2n9plBfvY-pwfHRfMGGfgAP4cn67jw3CO4ZAebTZ91InyEaHxqwa-VO8qf0tHEAXBOjbyQklPcij9dCqjLSdqgGJKmXw3k65CI6zXnD3ktXnoSD3nqfr1fauIi4jGNa2hOZ7XgZBo-fnCPiNsX15kJEBmRmRyW6gEt20tNgf-u4_rzOO6zb6YVR9Td0nWq__xlvThkiJ_F0d7e388trlWqE",
+    imageAlt: "Coscharis Technologies green power project",
+    href: "",
+  },
+  {
+    title:
+      "Coscharis Group founder inducted as fellow, chartered institute of directors, Nigeria",
+    excerpt:
+      "The President/CEO of Coscharis Group, Dr. Cosmas Maduka, CON, was recently conferred with the prestigious Fellow of the Chartered Institute of Directors, Nigeria in recognition for his exceptional contribution to Corporate Governance and Leadership at the Institute's 2024 Fellow's Night and Investiture Ceremony in Lagos.",
+    category: "empowerment",
+    imageSrc: "/images/news4-image.jpg",
+    imageAlt:
+      "Coscharis Group founder at chartered institute of directors event",
+    href: "",
   },
 ];
 
