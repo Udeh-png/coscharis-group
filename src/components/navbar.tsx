@@ -63,18 +63,18 @@ export const Navbar = () => {
                 <FaChevronDown className="text-[0.58rem] transition-transform group-hover:rotate-180" />
               </button>
 
-              <div className="pointer-events-none absolute left-0 top-full w-88 translate-y-5 pt-3 opacity-0 transition-all duration-300 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="pointer-events-none absolute left-0 top-full w-88 translate-y-5 pt-3 opacity-0 transition-all group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 will-change-transform">
                 <div className="border border-black/8 bg-background-primary p-2 text-black shadow-[0_28px_80px_rgba(0,0,0,0.18)]">
                   <div className="border border-black/8 p-3">
                     <ul className="grid gap-1">
                       {companyLinks.map((link) => (
                         <li key={link.label}>
                           <Link
-                            className="group/link flex items-center justify-between border-b border-black/8 px-3 py-3 text-xs font-extrabold tracking-[0.18em] transition-colors duration-300 last:border-b-0 hover:bg-black hover:text-white"
+                            className="group/link flex items-center justify-between border-b border-black/8 px-3 py-3 text-xs font-extrabold tracking-[0.18em] transition-colors last:border-b-0 hover:bg-black hover:text-white will-change-[color]"
                             href={link.href}
                           >
                             <span>{link.label}</span>
-                            <HiOutlineArrowLongRight className="translate-x-0 text-base opacity-0 transition-all duration-300 group-hover/link:translate-x-1 group-hover/link:opacity-100" />
+                            <HiOutlineArrowLongRight className="translate-x-0 text-base opacity-0 transition-all group-hover/link:translate-x-1 group-hover/link:opacity-100" />
                           </Link>
                         </li>
                       ))}
@@ -99,7 +99,7 @@ export const Navbar = () => {
           <li>
             <Link
               href="/contact-us"
-              className="ml-2 inline-flex items-center gap-2 bg-red-700 px-5 py-3 text-white transition-transform duration-300 hover:translate-x-1"
+              className="ml-2 inline-flex items-center gap-2 bg-red-700 px-5 py-3 text-white transition-transform hover:translate-x-1"
             >
               <span>Contact Us</span>
               <HiOutlineArrowLongRight className="text-base" />
@@ -160,7 +160,7 @@ export const Navbar = () => {
                   <li key={link.label} className="border-b border-black/10">
                     <Link
                       href={link.href}
-                      className={`flex items-center justify-between py-5 transition-all duration-300 hover:text-red-700 nav`}
+                      className={`flex items-center justify-between py-5 transition-all hover:text-red-700 nav`}
                     >
                       <span>{link.label}</span>
                     </Link>
@@ -176,7 +176,7 @@ export const Navbar = () => {
                   />
                   <label
                     htmlFor="mobile-companies-dropdown"
-                    className="flex w-full items-center z-10 justify-between border-b border-black/10 transition-colors duration-300 hover:text-red-700 outline-none"
+                    className="flex w-full items-center z-10 justify-between border-b border-black/10 transition-colors hover:text-red-700 outline-none"
                   >
                     <span className="flex items-center justify-between py-5">
                       Companies
@@ -201,7 +201,7 @@ export const Navbar = () => {
 
               <Link
                 href="/contact-us"
-                className="mt-10 inline-flex w-full items-center justify-center gap-2 bg-red-700 px-6 py-4 text-xs font-semibold uppercase tracking-widest text-white transition-transform duration-300 hover:translate-x-1"
+                className="mt-10 inline-flex w-full items-center justify-center gap-2 bg-red-700 px-6 py-4 text-xs font-semibold uppercase tracking-widest text-white transition-transform hover:translate-x-1"
               >
                 Contact Us
                 <HiOutlineArrowLongRight className="text-lg" />
