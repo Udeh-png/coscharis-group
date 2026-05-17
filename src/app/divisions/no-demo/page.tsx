@@ -9,7 +9,7 @@ export default function NoDemoPage() {
           href="/divisions/motors"
           className="text-red-600 underline underline-offset-4 transition hover:text-red-700"
         >
-          Divisions Motors
+          Motors
         </Link>
         .
       </h1>

@@ -367,7 +367,7 @@ export const Businesses = [
       "Aftersales, parts distribution, and workshop excellence",
       "A brand experience designed to feel premium at every touchpoint",
     ],
-    pageLinSrc: "/divisions/motors",
+    pageLinkSrc: "/divisions/motors",
   },
   {
     id: "technologies",
@@ -384,7 +384,7 @@ export const Businesses = [
       "Solutions built for resilience, security, and continuity",
       "Technology partnerships that turn complexity into confidence",
     ],
-    pageLinSrc: "/divisions/no-demo",
+    pageLinkSrc: "/divisions/no-demo",
   },
   {
     id: "mobility",
@@ -401,7 +401,7 @@ export const Businesses = [
       "Customer-first mobility experiences across touchpoints",
       "Systems that prioritize uptime, service quality, and trust",
     ],
-    pageLinSrc: "/divisions/no-demo",
+    pageLinkSrc: "/divisions/no-demo",
   },
   {
     id: "beverages",
@@ -418,7 +418,7 @@ export const Businesses = [
       "Products positioned for memorability and repeat purchase",
       "Execution that balances reach, consistency, and freshness",
     ],
-    pageLinSrc: "/divisions/no-demo",
+    pageLinkSrc: "/divisions/no-demo",
   },
   {
     id: "medicine-foods",
@@ -436,7 +436,7 @@ export const Businesses = [
       "Supply chains that support product confidence",
       "A practical business with meaningful everyday impact",
     ],
-    pageLinSrc: "/divisions/no-demo",
+    pageLinkSrc: "/divisions/no-demo",
   },
   {
     id: "farms",
@@ -453,7 +453,7 @@ export const Businesses = [
       "A long-term play in value creation and resilience",
       "Sustainability and stewardship built into the business story",
     ],
-    pageLinSrc: "/divisions/no-demo",
+    pageLinkSrc: "/divisions/no-demo",
   },
 ];
 

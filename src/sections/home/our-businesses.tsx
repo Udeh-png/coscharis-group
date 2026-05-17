@@ -4,6 +4,7 @@ import { useState } from "react";
 import { m, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import { Businesses } from "@/data";
+import Link from "next/link";
 
 export const OurBusinesses = () => {
   const [activeBusinessId, setActiveBusinessId] = useState(Businesses[0].id);
@@ -131,13 +132,14 @@ export const OurBusinesses = () => {
                   </div>
 
                   <div className="max-[541px]:justify-self-end">
-                    <button
+                    <Link
                       type="button"
+                      href={activeBusiness.pageLinkSrc}
                       className="mt-8 inline-flex items-center gap-2 bg-red-700 px-5 py-3 text-xs uppercase tracking-widest font-semibold text-white transition-transform duration-300 hover:translate-x-1"
                     >
                       Explore {activeBusiness.name}
                       <HiOutlineArrowLongRight className="text-lg" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </m.article>
