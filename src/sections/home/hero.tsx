@@ -25,8 +25,8 @@ const featuredDivisions = [
       "A future-facing business shaped around production, sustainability, and dependable execution where long-term thinking matters most.",
     fact: "Built for food systems and durable value creation",
     stat: "20 countries",
-    metric: "served through the group’s broader footprint",
-    link: "/divisions/agriculture",
+    metric: "served through the group's broader footprint",
+    link: "/divisions/no-demo",
   },
   {
     name: "Technologies",
@@ -37,7 +37,7 @@ const featuredDivisions = [
     fact: "Reliable infrastructure for modern operations",
     stat: "$60M",
     metric: "yearly market capital highlighted on this page",
-    link: "/divisions/technology",
+    link: "/divisions/no-demo",
   },
 ];
 

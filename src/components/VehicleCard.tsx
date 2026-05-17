@@ -8,7 +8,10 @@ type VehicleCardProps = {
   priority?: boolean;
 };
 
-export const VehicleCard = ({ vehicle, priority = false }: VehicleCardProps) => {
+export const VehicleCard = ({
+  vehicle,
+  priority = false,
+}: VehicleCardProps) => {
   const displaySpecs = vehicle.keySpecs.slice(0, 5);
   const formattedPrice = new Intl.NumberFormat("en-NG", {
     style: "currency",
@@ -18,7 +21,7 @@ export const VehicleCard = ({ vehicle, priority = false }: VehicleCardProps) => 
 
   return (
     <Link
-      href={`/coscharis-motors/${vehicle.name.toLowerCase().replace(/\s+/g, "-")}`}
+      href={`/divisions/motors/${vehicle.name.toLowerCase().replace(/\s+/g, "-")}`}
       key={vehicle.name}
       className="border border-black/10 bg-white p-6 max-[541px]:p-0 max-[541px]:pb-6 shadow-[0_18px_45px_rgba(15,23,42,0.08)] transition-transform duration-300 hover:-translate-y-1 block text-start"
     >

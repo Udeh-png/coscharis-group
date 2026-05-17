@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
 const companyLinks = [
-  { label: "Motors", href: "/coscharis-motors" },
+  { label: "Motors", href: "/divisions/motors" },
   { label: "Technologies", href: "/" },
   { label: "Mobility", href: "/" },
   { label: "Motor Assembly", href: "/" },
