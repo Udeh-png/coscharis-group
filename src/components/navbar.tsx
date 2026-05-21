@@ -10,20 +10,20 @@ import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
 const companyLinks = [
   { label: "Motors", href: "/divisions/motors" },
-  { label: "Technologies", href: "/" },
-  { label: "Mobility", href: "/" },
-  { label: "Motor Assembly", href: "/" },
-  { label: "Beverages", href: "/" },
-  { label: "Medicine & Foods", href: "/" },
-  { label: "Farms", href: "/" },
-  { label: "Ghana", href: "/" },
+  { label: "Technologies", href: "/divisions/no-demo" },
+  { label: "Mobility", href: "/divisions/no-demo" },
+  { label: "Motor Assembly", href: "/divisions/no-demo" },
+  { label: "Beverages", href: "/divisions/no-demo" },
+  { label: "Medicine & Foods", href: "/divisions/no-demo" },
+  { label: "Farms", href: "/divisions/no-demo" },
+  { label: "Ghana", href: "/divisions/no-demo" },
 ];
 
 const navLinks = [
-  { label: "About Coscharis", href: "/" },
-  { label: "News & Events", href: "/" },
-  { label: "Investor Relations", href: "/" },
-  { label: "Leadership", href: "/" },
+  { label: "About Coscharis", href: "/divisions/no-demo" },
+  { label: "News & Events", href: "/divisions/no-demo" },
+  { label: "Investor Relations", href: "/divisions/no-demo" },
+  { label: "Leadership", href: "/divisions/no-demo" },
 ];
 
 export const Navbar = () => {
