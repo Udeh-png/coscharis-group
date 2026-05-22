@@ -20,10 +20,10 @@ const companyLinks = [
 ];
 
 const navLinks = [
-  { label: "About Coscharis", href: "/divisions/no-demo" },
-  { label: "News & Events", href: "/divisions/no-demo" },
-  { label: "Investor Relations", href: "/divisions/no-demo" },
-  { label: "Leadership", href: "/divisions/no-demo" },
+  { label: "About Coscharis", href: "/no-demo" },
+  { label: "News & Events", href: "/no-demo" },
+  { label: "Investor Relations", href: "/no-demo" },
+  { label: "Leadership", href: "/no-demo" },
 ];
 
 export const Navbar = () => {
