@@ -265,16 +265,23 @@ export const Footer = () => {
       </div>
 
       <div className="mt-10 border-t border-white/20 pb-3 pt-5 text-xs">
-        <div className="flex justify-between gap-4 max-[700px]:flex-col">
+        <div className="flex justify-between gap-4 max-[700px]:flex-col max-[700px]:items-center">
           <div>
-            <p className="mb-1">Coscharis Group &trade;</p>
-
-            <p>&copy;{new Date().getFullYear()}</p>
+            <p className="mb-1">
+              This is a concept design and is not affiliated with Coscharis
+              Group&trade;
+            </p>
           </div>
 
           <p>
-            User Interface & Content by, The Man! The Myth! The Legend! UDEH
-            CHISOM.
+            User Interface & Content by, The Man! The Myth! The Legend!
+            <Link
+              href="https://www.linkedin.com/in/udeh-chisom-dev/"
+              target="_blank"
+              className="font-semibold text-white/90 underline transition-colors duration-300 hover:text-red-500"
+            >
+              UDEH CHISOM.
+            </Link>
           </p>
         </div>
       </div>
