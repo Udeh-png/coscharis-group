@@ -269,12 +269,12 @@ export const Footer = () => {
           <div>
             <p className="mb-1">
               This is a concept design and is not affiliated with Coscharis
-              Group&trade;
+              Group
             </p>
           </div>
 
           <p>
-            User Interface & Content by, The Man! The Myth! The Legend!
+            User Interface & Content by, The Man! The Myth! The Legend!{" "}
             <Link
               href="https://www.linkedin.com/in/udeh-chisom-dev/"
               target="_blank"
